@@ -1,0 +1,29 @@
+/* Businessmodule.css */
+.content-container {
+    width: 80%; /* Set the width of the div to 80% */
+    margin: 0 auto; /* Center the div horizontally */
+    padding: 20px; /* Optional padding to space out the content */
+    text-align: justify; /* Ensure text is justified for better readability */
+  }
+  
+  .content-container p {
+    margin-bottom: 15px; /* Optional margin for spacing between paragraphs */
+    font-size: 16px; /* Set the font size */
+    line-height: 1.6; /* Adjust line height for readability */
+  }
+  /* Responsive Image */
+.responsive-image {
+    display: block;
+    width: calc(100% - 60px); /* Full width minus left and right margin */
+    margin: 20px 80px;
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  /* Mobile View */
+  @media (max-width: 768px) {
+    .responsive-image {
+      width: 100%; /* Full width on smaller screens */
+      margin: 0;   /* Remove margins */
+    }
+  }
