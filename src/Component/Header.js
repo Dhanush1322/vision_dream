@@ -100,10 +100,10 @@ const Header = () => {
                     <Link to="/BusinessModule">Business Module</Link>
                   </li>
                   <li>
-                    <Link to="/SymenticService">Symentic Service</Link>
+                    <Link to="/SymenticService">Semantic Service</Link>
                   </li>
                   <li>
-                    <Link to="/DiscovoryService">Discovory Service</Link>
+                    <Link to="/DiscovoryService">Discovery Service</Link>
                   </li>
                 </ul>
               </li>
@@ -119,13 +119,16 @@ const Header = () => {
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to="/Synthetic_Chemicle">Synthetic Chemicle</Link>
+                    <Link to="/Synthetic_Chemicle">Synthetic Chemistry</Link>
                   </li>
                   <li>
-                    <Link to="/AnalyticleCapability">AnalyticleCapability</Link>
+                    <Link to="/AnalyticleCapability">Analytical Capabilities</Link>
                   </li>
                   
                 </ul>
+              </li>
+              <li>
+                <Link to="/product">Product</Link>
               </li>
               <li>
                 <Link to="/contact">Contact</Link>

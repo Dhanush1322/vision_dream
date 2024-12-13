@@ -13,6 +13,7 @@ import Technology from './Component/Technology';
 import BookanAppointment from './Component/BookanAppointment';
 import Synthetic_Chemicle from './Component/Synthetic_Chemicle';
 import AnalyticleCapability from './Component/AnalyticleCapability';
+import Product from './Component/Product';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
          <Route path="/AnalyticleCapability" element={<AnalyticleCapability />} />
 
         {/* Contact and Appointment Routes */}
+        <Route path="/product" element={<Product />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/BookanAppointment" element={<BookanAppointment />} />
       </Routes>
