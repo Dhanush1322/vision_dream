@@ -42,6 +42,7 @@ function App() {
 
         {/* Contact and Appointment Routes */}
         <Route path="/product" element={<Product />} />
+        
         <Route path="/contact" element={<Contact />} />
         <Route path="/BookanAppointment" element={<BookanAppointment />} />
       </Routes>
