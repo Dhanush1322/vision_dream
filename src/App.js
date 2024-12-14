@@ -15,6 +15,7 @@ import Synthetic_Chemicle from './Component/Synthetic_Chemicle';
 import AnalyticleCapability from './Component/AnalyticleCapability';
 import Product from './Component/Product';
 
+
 function App() {
   return (
     <Router>
@@ -42,6 +43,11 @@ function App() {
 
         {/* Contact and Appointment Routes */}
         <Route path="/product" element={<Product />} />
+        
+               
+
+        
+        
         <Route path="/contact" element={<Contact />} />
         <Route path="/BookanAppointment" element={<BookanAppointment />} />
       </Routes>
