@@ -1,0 +1,21 @@
+.dashboard-main {
+    margin-left: 250px;
+    padding: 20px;
+  }
+  
+  .stats-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .stats-cards {
+      grid-template-columns: 1fr 1fr;
+    }
+    .dashboard-main {
+      margin-left: 0px;
+      padding: 10px;
+    }
+  }
+  

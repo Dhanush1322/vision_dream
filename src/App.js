@@ -14,6 +14,11 @@ import BookanAppointment from './Component/BookanAppointment';
 import Synthetic_Chemicle from './Component/Synthetic_Chemicle';
 import AnalyticleCapability from './Component/AnalyticleCapability';
 import Product from './Component/Product';
+import Login from './Component/Login';
+
+//admin dashboard
+import DashboardPage from './dashboard/pages/DashboardPage'
+import Appointment from './dashboard/pages/Appointment';
 
 
 function App() {
@@ -43,13 +48,15 @@ function App() {
 
         {/* Contact and Appointment Routes */}
         <Route path="/product" element={<Product />} />
-        
-               
-
-        
-        
         <Route path="/contact" element={<Contact />} />
         <Route path="/BookanAppointment" element={<BookanAppointment />} />
+        <Route path="/DashboardPage" element={ <DashboardPage />} />
+        <Route path="/Login" element={ <Login />} />
+
+        {/* Admin Dashboard */}
+        <Route path="/Appointment" element={ <Appointment />} />
+
+
       </Routes>
     </Router>
   );
