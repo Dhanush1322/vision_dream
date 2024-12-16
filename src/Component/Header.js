@@ -136,8 +136,9 @@ const Header = () => {
               <li>
                 <Link to="/BookanAppointment">Book Appointment</Link>
               </li>
+              
               <li>
-                <Link to="/dashboard">Dashboard</Link>
+                <Link to="/Login">Login</Link>
               </li>
               
             </ul>
