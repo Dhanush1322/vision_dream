@@ -4,6 +4,8 @@ import Navbar from '../components/Navbar';
 import DashboardMain from '../components/DashboardMain';
 import Footer from '../components/Footer';
 import { useNavigate } from 'react-router-dom';
+import './DashboardPage.css';
+
 
 const DashboardPage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
