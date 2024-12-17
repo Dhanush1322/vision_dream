@@ -8,34 +8,43 @@ function Login() {
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false); // State for loader
   const navigate = useNavigate(); // Hook for navigation
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission
-    setError('');
+    setError(''); // Clear any previous error message
+    setIsLoading(true); // Show loader when submitting form
 
-    try {
-      const response = await fetch('https://walrus-app-seuz8.ondigitalocean.app/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ userId, password }),
-      });
+    // Show loader first, then make API call
+    setTimeout(async () => {
+      try {
+        const response = await fetch('https://walrus-app-seuz8.ondigitalocean.app/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ userId, password }),
+        });
 
-      const data = await response.json();
-      if (response.ok) {
-          localStorage.setItem('auth',data?.token)
-        // Successful login: Navigate to the dashboard
-        navigate('/DashboardPage'); // Replace with your dashboard route
-      } else {
-        // Display error message from API
-        setError(data.error || 'Login failed. Please try again.');
+        const data = await response.json();
+        if (response.ok) {
+          // Successful login: Store token and navigate to dashboard
+          localStorage.setItem('auth', data?.token);
+          setTimeout(() => {
+            navigate('/DashboardPage'); // Replace with your dashboard route
+          }, 1000); // Delay navigation to allow loader to finish
+        } else {
+          // Display error message from API after loader stops
+          setError(data.error || 'Login failed. Please try again.');
+        }
+      } catch (err) {
+        // Handle network or unexpected errors
+        setError('An error occurred. Please try again later.');
+      } finally {
+        setIsLoading(false); // Hide loader after operation
       }
-    } catch (err) {
-      // Handle network or other unexpected errors
-      setError('An error occurred. Please try again later.');
-    }
+    }, 2000); // Show loader for 3 seconds before making the API call
   };
 
   return (
@@ -45,6 +54,10 @@ function Login() {
         <div className="login-form">
           <h2>Login</h2>
           {error && <p className="error">{error}</p>} {/* Display error message */}
+          
+          {/* Display loader if form is being submitted */}
+          {isLoading && <div className="loader"></div>} {/* Loader component */}
+
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="userId">User ID</label>

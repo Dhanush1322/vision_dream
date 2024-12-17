@@ -1,35 +1,81 @@
+/* Sidebar container styling */
 .sidebar {
   width: 250px;
   height: 100vh;
-  background-color: #2c3e50;
-  padding: 20px;
+  background-color: #2c3e50; /* Dark theme background */
+  padding: 20px 0; /* Adjust padding for better spacing */
   color: white;
   position: fixed;
-  left: 0; /* Sidebar always visible on large screens */
+  left: 0; /* Sidebar is always visible on large screens */
   transition: left 0.3s ease-in-out; /* Smooth transition for mobile view */
+  overflow-y: auto; /* Allow scrolling if content exceeds height */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
 }
 
+/* Sidebar open state */
 .sidebar.open {
-  left: 0; /* Sidebar will be visible when open in mobile view */
+  left: 0; /* Sidebar visible when open in mobile view */
+}
+
+/* Sidebar header styling */
+.sidebar-header {
+  padding: 20px;
+  text-align: center;
+  background-color: #34495e; /* Header background */
+  border-bottom: 1px solid #1a242f; /* Subtle border */
 }
 
 .sidebar-header h2 {
-  color: #f39c12;
-  text-align: center;
+  color: #f39c12; /* Gold text for branding */
+  font-size: 1.5em;
+  margin: 0;
 }
 
+/* Sidebar links styling */
 .sidebar-links {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 .sidebar-links li {
-  padding: 15px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
 }
 
 .sidebar-links li:hover {
-  background-color: #34495e;
+  background-color: #1a242f; /* Darker shade for hover effect */
+  color: #00aaff; /* Accent color for hover */
+}
+
+/* Icon styling inside list items */
+.sidebar-links li .icon {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+/* Logout option styling */
+.logout-option {
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logout-option:hover {
+  background-color: #1a242f;
+  color: #ff4d4d; /* Red text for logout hover */
 }
 
 /* Media query for mobile view (max-width: 768px) */
@@ -40,7 +86,7 @@
 
   .sidebar.open {
     left: 0; /* Sidebar visible when 'open' class is added on mobile */
-    margin-top: 69px;
+    margin-top: 63px; /* Adjust margin for mobile headers if necessary */
   }
 }
 

@@ -2,6 +2,7 @@
     display: flex;
     max-width: 1500px; /* Prevent stretching */
        /* Center the content */
+       
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 

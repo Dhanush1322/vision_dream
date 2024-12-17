@@ -19,6 +19,10 @@ import Login from './Component/Login';
 //admin dashboard
 import DashboardPage from './dashboard/pages/DashboardPage'
 import Appointment from './dashboard/pages/Appointment';
+import EditPassword from './dashboard/pages/EditPasswordPage';
+import AddBanner from './dashboard/pages/AddBanner';
+import UpadateBanner from './dashboard/pages/UpadateBanner';
+import EditBanner from './dashboard/pages/EditBanner';
 
 
 function App() {
@@ -50,11 +54,16 @@ function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/BookanAppointment" element={<BookanAppointment />} />
-        <Route path="/DashboardPage" element={ <DashboardPage />} />
+      
         <Route path="/Login" element={ <Login />} />
 
         {/* Admin Dashboard */}
+        <Route path="/DashboardPage" element={ <DashboardPage />} />
         <Route path="/Appointment" element={ <Appointment />} />
+        <Route path="/AddBanner" element={ <AddBanner />} />
+        <Route path="/EditPassword" element={ <EditPassword />} />
+        <Route path="/UpdateBanner" element={ <UpadateBanner />} />
+        <Route path="/EditBanner" element={ <EditBanner />} />
 
 
       </Routes>

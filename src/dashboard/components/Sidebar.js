@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { FaTachometerAlt, FaKey, FaImage, FaProductHunt, FaCalendarAlt, FaSignOutAlt } from 'react-icons/fa'; // Import icons
 import './Sidebar.css'; // Import CSS for styling
 
 const Sidebar = ({ isOpen }) => {
@@ -8,7 +9,6 @@ const Sidebar = ({ isOpen }) => {
   const handleLogout = () => {
     // Remove the token from localStorage
     localStorage.removeItem('auth');
-
     // Redirect the user to the login page
     navigate('/Login');
   };
@@ -20,21 +20,38 @@ const Sidebar = ({ isOpen }) => {
       </div>
       <ul className="sidebar-links">
         <li>
-          <Link to="/DashboardPage">Dashboard</Link>
+          <Link to="/DashboardPage">
+            <FaTachometerAlt className="icon" /> Dashboard
+          </Link>
         </li>
         <li>
-          <Link to="/EditPassword">Edit Password</Link>
+          <Link to="/EditPassword">
+            <FaKey className="icon" /> Edit Password
+          </Link>
         </li>
         <li>
-          <Link to="/AddBanner">Add Banner</Link>
+          <Link to="/AddBanner">
+            <FaImage className="icon" /> Add Banner
+          </Link>
         </li>
         <li>
-          <Link to="/AddProduct">Add Product</Link>
+          <Link to="/UpdateBanner">
+            <FaImage className="icon" /> Update Banner
+          </Link>
         </li>
         <li>
-          <Link to="/Appointment">Appointment</Link>
+          <Link to="/AddProduct">
+            <FaProductHunt className="icon" /> Add Product
+          </Link>
         </li>
-        <li onClick={handleLogout} className="logout-option">Logout</li> {/* Logout option */}
+        <li>
+          <Link to="/Appointment">
+            <FaCalendarAlt className="icon" /> Appointment
+          </Link>
+        </li>
+        <li onClick={handleLogout} className="logout-option">
+          <FaSignOutAlt className="icon" /> Logout
+        </li>
       </ul>
     </div>
   );

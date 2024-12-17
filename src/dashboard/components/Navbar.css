@@ -1,26 +1,16 @@
+/* Main Navbar Styles */
 .navbar1 {
   background-color: #f39c12;
-  padding: 10px;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 250px;
-}
-
-.navbar1 h3 {
-  color: white;
-}
-
-.navbar-actions button {
-  background-color: #e74c3c;
-  color: white;
-  padding: 5px 15px;
-  border: none;
-  cursor: pointer;
-}
-
-.navbar-actions button:hover {
-  background-color: #c0392b;
+  position: fixed;
+  top: 0;
+  left: 250px; /* Adjust for sidebar width */
+  right: 0;
+  z-index: 1000; /* Ensure navbar stays on top */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Hamburger Menu for mobile */
@@ -31,50 +21,85 @@
   cursor: pointer;
 }
 
-/* Media Query for mobile view (768px and below) */
+/* Navbar Search Bar */
+.navbar-search {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  max-width: 400px;
+  margin: 0 auto; /* Center search bar */
+}
+
+.navbar-search input {
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  font-size: 14px;
+}
+
+.navbar-search .search-icon {
+  margin-left: -30px;
+  font-size: 16px;
+  color: #f39c12;
+  background-color: white;
+  border-radius: 50%;
+  padding: 4px;
+  cursor: pointer;
+}
+
+/* Admin Dashboard Heading */
+.navbar1 h3 {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* Profile Icon */
+.navbar-profile {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar-profile .profile-icon {
+  transition: transform 0.3s ease;
+}
+
+.navbar-profile:hover .profile-icon {
+  transform: scale(1.2);
+}
+
+/* Media Query for Mobile View */
 @media (max-width: 768px) {
   .hamburger-menu {
-    display: block;
-    margin-left: 0%;
-    padding-left: 0px;
-    /* Show hamburger menu on mobile */
+    display: block; /* Show hamburger menu on mobile */
   }
 
   .navbar1 {
     justify-content: space-between;
-    margin-left: 0px;
-    width: 700px;
+    left: 0; /* Adjust for mobile view */
   }
 
-  .navbar-actions {
-    display: none; /* Hide default actions on mobile */
-  }
-
-  .mobile-menu button {
-    width: 100%; /* Make the buttons full-width in the mobile menu */
-  }
-}
-
-/* Media Query for smaller mobile view (450px and below) */
-@media (max-width: 450px) {
-  .hamburger-menu {
-    font-size: 25px; /* Smaller hamburger icon */
+  .navbar-search {
+    display: none; /* Hide search bar on mobile */
   }
 
   .navbar1 h3 {
-    font-size: 18px; /* Reduce font size of heading */
+    font-size: 18px;
+  }
+}
+
+/* Media Query for Smaller Mobile View */
+@media (max-width: 450px) {
+  .navbar1 h3 {
+    font-size: 16px;
   }
 
-  .navbar-actions button {
-    padding: 5px 10px; /* Smaller button padding */
-  }
-
-  .mobile-menu {
-    width: 100%; /* Full-width mobile menu */
-    padding: 10px 0;
-  }
-
-  .mobile-menu button {
-    font-size: 16px; /* Smaller button font size */
+  .navbar-profile .profile-icon {
+    font-size: 25px;
   }
 }
