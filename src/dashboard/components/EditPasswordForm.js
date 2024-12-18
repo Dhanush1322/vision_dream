@@ -3,9 +3,9 @@ import axios from 'axios';  // Import axios for making HTTP requests
 import './EditPasswordForm.css'; // Include CSS for styling if needed
 
 function EditPasswordForm() {
-  const [currentPassword, setCurrentPassword] = useState('');
+  const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [confirmNewPassword, setConfirmNewPassword] = useState('');
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');  // New state for success message
   const [loading, setLoading] = useState(false);  // Loading state for the form submission
@@ -14,8 +14,8 @@ function EditPasswordForm() {
     e.preventDefault();
 
     // Password validation logic
-    if (newPassword !== confirmPassword) {
-      setError('New Password and Confirm Password do not match.');
+    if (newPassword !== confirmNewPassword) {
+      setError('New Password and Confirm New Password do not match.');
       return;
     }
 
@@ -31,16 +31,17 @@ function EditPasswordForm() {
 
     // Make API request to reset the password
     try {
-      const response = await axios.post('https://walrus-app-seuz8.ondigitalocean.app/reset-password', {
-        currentPassword,
-        newPassword
+      const response = await axios.post('https://host-rl4ol.ondigitalocean.app/reset-password', {
+        oldPassword,        // Changed to 'oldPassword'
+        newPassword,        // New password field
+        confirmNewPassword  // Confirm new password field
       });
 
       if (response.status === 200) {
         setSuccessMessage('Password updated successfully!');
-        setCurrentPassword('');
+        setOldPassword('');
         setNewPassword('');
-        setConfirmPassword('');
+        setConfirmNewPassword('');
       } else {
         // Handle non-200 responses
         setError(`Error: ${response.status} - ${response.statusText}`);
@@ -68,12 +69,12 @@ function EditPasswordForm() {
         {successMessage && <p className="success-message">{successMessage}</p>} {/* Success message */}
         
         <div className="form-group">
-          <label htmlFor="currentPassword">Current Password</label>
+          <label htmlFor="oldPassword">Old Password</label>
           <input
             type="password"
-            id="currentPassword"
-            value={currentPassword}
-            onChange={(e) => setCurrentPassword(e.target.value)}
+            id="oldPassword"
+            value={oldPassword}
+            onChange={(e) => setOldPassword(e.target.value)}
             placeholder="Enter current password"
             required
           />
@@ -92,12 +93,12 @@ function EditPasswordForm() {
         </div>
         
         <div className="form-group">
-          <label htmlFor="confirmPassword">Confirm New Password</label>
+          <label htmlFor="confirmNewPassword">Confirm New Password</label>
           <input
             type="password"
-            id="confirmPassword"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
+            id="confirmNewPassword"
+            value={confirmNewPassword}
+            onChange={(e) => setConfirmNewPassword(e.target.value)}
             placeholder="Confirm new password"
             required
           />

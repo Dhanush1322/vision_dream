@@ -5,7 +5,7 @@ import Footer from './Footer';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
-  const [userId, setUserId] = useState('');
+  const [username, setUsername] = useState(''); // Changed from userId to username
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false); // State for loader
@@ -16,35 +16,31 @@ function Login() {
     setError(''); // Clear any previous error message
     setIsLoading(true); // Show loader when submitting form
 
-    // Show loader first, then make API call
-    setTimeout(async () => {
-      try {
-        const response = await fetch('https://walrus-app-seuz8.ondigitalocean.app/login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ userId, password }),
-        });
+    try {
+      // Make API call to the new endpoint
+      const response = await fetch('https://host-rl4ol.ondigitalocean.app/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }), // Updated fields for API compatibility
+      });
 
-        const data = await response.json();
-        if (response.ok) {
-          // Successful login: Store token and navigate to dashboard
-          localStorage.setItem('auth', data?.token);
-          setTimeout(() => {
-            navigate('/DashboardPage'); // Replace with your dashboard route
-          }, 1000); // Delay navigation to allow loader to finish
-        } else {
-          // Display error message from API after loader stops
-          setError(data.error || 'Login failed. Please try again.');
-        }
-      } catch (err) {
-        // Handle network or unexpected errors
-        setError('An error occurred. Please try again later.');
-      } finally {
-        setIsLoading(false); // Hide loader after operation
+      const data = await response.json();
+      if (response.ok) {
+        // Successful login: Store token and navigate to dashboard
+        localStorage.setItem('auth', data?.token);
+        navigate('/DashboardPage'); // Replace with your dashboard route
+      } else {
+        // Display error message from API
+        setError(data.error || 'Login failed. Please try again.');
       }
-    }, 2000); // Show loader for 3 seconds before making the API call
+    } catch (err) {
+      // Handle network or unexpected errors
+      setError('An error occurred. Please try again later.');
+    } finally {
+      setIsLoading(false); // Hide loader after operation
+    }
   };
 
   return (
@@ -60,13 +56,13 @@ function Login() {
 
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="userId">User ID</label>
+              <label htmlFor="username">Username</label> {/* Updated label */}
               <input
                 type="text"
-                id="userId"
-                placeholder="Enter your User ID"
-                value={userId}
-                onChange={(e) => setUserId(e.target.value)} // Update state
+                id="username"
+                placeholder="Enter your Username" // Updated placeholder
+                value={username}
+                onChange={(e) => setUsername(e.target.value)} // Update state
                 required
               />
             </div>
