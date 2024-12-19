@@ -3,6 +3,8 @@ import axios from 'axios';
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+  import Swal from 'sweetalert2'; // Make sure to install SweetAlert2: npm install sweetalert2
+  
 import { useNavigate } from 'react-router-dom';
 import './AddBanner.css';
 
@@ -37,21 +39,26 @@ function AddBanner() {
   };
 
   // Handle form submission
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (!image) {
-      alert('Please select an image to upload.');
+      Swal.fire({
+        icon: 'warning',
+        title: 'No Image Selected',
+        text: 'Please select an image to upload.',
+      });
       return;
     }
-
+  
     setLoading(true); // Show loading state
     const formData = new FormData();
-    formData.append('image', image); // Make sure 'image' matches backend key
-
+    formData.append('banner', image); // Ensure 'image' matches backend key
+  
     try {
       const response = await axios.post(
-        'https://api-banner-6i7qc.ondigitalocean.app/api/banner-images',
+        'https://sapthapadhimatrimony.in/backend/app/addGalloticBanner',
         formData,
         {
           headers: {
@@ -59,22 +66,37 @@ function AddBanner() {
           },
         }
       );
-
+  
       console.log('Server Response:', response.data);
-      alert('Banner uploaded successfully!');
+  
+      // Show success message
+      Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: 'Banner uploaded successfully!',
+      });
+  
       setImage(null); // Reset file input after successful upload
     } catch (error) {
       console.error('Error uploading banner:', error);
+  
+      let errorMessage = 'Failed to upload banner. Please try again later.';
       if (error.response) {
         console.error('Server Error:', error.response.data);
-        alert(`Failed to upload banner: ${error.response.data.message || 'Server error'}`);
-      } else {
-        alert('Failed to upload banner. Please try again later.');
+        errorMessage = error.response.data.message || 'Server error';
       }
+  
+      // Show error message
+      Swal.fire({
+        icon: 'error',
+        title: 'Upload Failed',
+        text: errorMessage,
+      });
     } finally {
       setLoading(false); // Hide loading state
     }
   };
+  
 
   return (
     <div className="dashboard">

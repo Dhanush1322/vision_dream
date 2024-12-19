@@ -3,22 +3,8 @@ import "./Banner.css"; // Importing the CSS file for custom styles
 
 const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  const slides = [
-    {
-      img: "../banner/banner.jpg",
-     
-    },
-    {
-      img: "../banner/banner.jpg",
-      
-    },
-    {
-      img: "../banner/banner.jpg",
-      
-    },
-  ];
-
+  const [slides, setSlides] = useState([]); // Dynamic slides state
+  console.log("Slides",slides);
   const totalSlides = slides.length;
 
   // Function to change slide
@@ -30,7 +16,19 @@ const Banner = () => {
       return newSlide;
     });
   };
+  useEffect(() => {
+    const fetchBanners = async () => {
+      try {
+        const response = await fetch("https://sapthapadhimatrimony.in/backend/app/getGalloticBanner");
+        const data = await response.json();
+        setSlides(data || []); // Update slides state with fetched data
+      } catch (error) {
+        console.error("Error fetching banners:", error);
+      }
+    };
 
+    fetchBanners();
+  }, []);
   // Auto-slide functionality
   useEffect(() => {
     const interval = setInterval(() => {
@@ -48,7 +46,7 @@ const Banner = () => {
         >
           {slides.map((slide, index) => (
             <div className="slide" key={index}>
-              <img src={slide.img} alt={`Slide ${index + 1}`} />
+              <img src={`https://sapthapadhimatrimony.in/backend/${slide.imageUrls[0].path}`} alt={`Slide ${index + 1}`} />
               <div className="content">
                 <h2>{slide.title}</h2>
                 <p>{slide.description}</p>

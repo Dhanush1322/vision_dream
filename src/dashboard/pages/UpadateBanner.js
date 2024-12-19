@@ -4,10 +4,13 @@ import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './UpadateBanner.css';
+import Swal from 'sweetalert2';
+
 
 function UpdateBanner() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [banners, setBanners] = useState([]);
+    const [update,setUpdate]=useState(false);
     const navigate = useNavigate(); // Hook to navigate to another route
 
     // Toggle Sidebar
@@ -19,8 +22,9 @@ function UpdateBanner() {
     useEffect(() => {
         const fetchBanners = async () => {
             try {
-                const response = await fetch('https://api-banner-6i7qc.ondigitalocean.app/api/banner-images');
+                const response = await fetch('https://sapthapadhimatrimony.in/backend/app/getGalloticBanner');
                 const data = await response.json();
+                console.log("data",data)
                 setBanners(data);
             } catch (error) {
                 console.error('Error fetching banners:', error);
@@ -28,25 +32,61 @@ function UpdateBanner() {
         };
 
         fetchBanners();
-    }, []);
+    }, [update]);
 
     // Handle Delete action
-    const handleDelete = async (id) => {
-        try {
-            const response = await fetch(`https://api-banner-6i7qc.ondigitalocean.app/api/banner-images/${id}`, {
-                method: 'DELETE',
-            });
 
-            if (response.ok) {
-                setBanners(banners.filter(banner => banner.imageId !== id));
-                alert('Banner deleted successfully');
-            } else {
-                alert('Failed to delete banner');
-            }
-        } catch (error) {
-            alert('Error deleting banner');
-        }
-    };
+const handleDelete = async (id) => {
+  try {
+    // Show confirmation popup
+    const result = await Swal.fire({
+      title: 'Are you sure?',
+      text: 'Do you really want to delete this banner? This action cannot be undone.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'Cancel',
+    });
+
+    // If the user confirms, proceed with deletion
+    if (result.isConfirmed) {
+      const response = await fetch(`https://sapthapadhimatrimony.in/backend/app/deleteGalloticBanner/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        setBanners(banners.filter((banner) => banner.imageId !== id));
+
+        // Show success message
+        setUpdate(!update)
+        Swal.fire({
+          icon: 'success',
+          title: 'Deleted!',
+          text: 'The banner has been deleted successfully.',
+        });
+      } else {
+        // Show error message for server error
+        Swal.fire({
+          icon: 'error',
+          title: 'Failed',
+          text: 'Failed to delete the banner. Please try again later.',
+        });
+      }
+    }
+  } catch (error) {
+    console.error('Error deleting banner:', error);
+
+    // Show error message for network or unexpected errors
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'An error occurred while deleting the banner. Please try again.',
+    });
+  }
+};
+
 
     // Handle Edit action
     const handleEdit = (id) => {
@@ -76,14 +116,14 @@ function UpdateBanner() {
                                         <td>{index + 1}</td>
                                         <td>
                                             <img
-                                                src={`https://api-banner-6i7qc.ondigitalocean.app/${banner.url}`}
+                                                src={`https://sapthapadhimatrimony.in/backend/${banner?.imageUrls[0]?.path}`}
                                                 alt={banner.imageId}
                                                 className="banner-image"
                                             />
                                         </td>
                                         <td>
-                                            <button onClick={() => handleEdit(banner.imageId)} className="edit-btn">Edit</button>
-                                            <button onClick={() => handleDelete(banner.imageId)} className="delete-btn">Delete</button>
+                                            {/* <button onClick={() => handleEdit(banner.imageId)} className="edit-btn">Edit</button> */}
+                                            <button onClick={() => handleDelete(banner.id)} className="delete-btn">Delete</button>
                                         </td>
                                     </tr>
                                 ))
