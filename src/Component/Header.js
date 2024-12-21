@@ -39,7 +39,7 @@ const Header = () => {
           <div className="navbar-header">
             {/* Logo */}
             <Link to="/" className="navbar-brand">
-              <img src="logo/logo.png" alt="Logo" style={{ width: '100px' }} />
+              <img src="logo/logo.png" alt="Logo" style={{ width: '120px' }} />
             </Link>
 
             {/* Mobile Toggle Button */}
@@ -73,14 +73,14 @@ const Header = () => {
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to="/about">About Glore TX</Link>
+                    <Link to="/about">About Galore TX</Link>
                   </li>
                   <li>
                     <Link to="/FounderAndLeadership">Founders </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to="/Leadership">Leadership</Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to="/Management">Management</Link>
                   </li>
@@ -97,10 +97,10 @@ const Header = () => {
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to="/BusinessModule">Business Module</Link>
+                    <Link to="/BusinessModule">Business Model</Link>
                   </li>
                   <li>
-                    <Link to="/SymenticService">Semantic Service</Link>
+                    <Link to="/SymenticService">Synthetic Service</Link>
                   </li>
                   <li>
                     <Link to="/DiscovoryService">Discovery Service</Link>
@@ -128,7 +128,7 @@ const Header = () => {
                 </ul>
               </li>
               <li>
-                <Link to="/product">Product</Link>
+                <Link to="/product">ScaleUp</Link>
               </li>
               <li>
                 <Link to="/contact">Contact</Link>
