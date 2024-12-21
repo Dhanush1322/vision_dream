@@ -14,7 +14,7 @@ function BusinessModule() {
         <div className="row m0 inner">
           <div className="container">
             <div className="row">
-              <h2>Business module</h2>
+              <h2>Business model</h2>
             </div>
           </div>
         </div>

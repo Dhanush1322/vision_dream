@@ -34,12 +34,8 @@ function Home() {
                                 </div>
                                 <div className="media-body">
                                     <p style={{ fontSize: '18px', fontWeight: '500', color: '#555', lineHeight: '1.6' }}>
-                                        GaloreTx® with its vast experience in the peptide space is actively involved in peptide synthesis and in exploring
-                                        new designs and synthetic strategies with its collaborators by pushing the boundaries of peptide chemistry with
-                                        a mission to accelerate peptide drug discovery programs.
-                                        <br /><br />
-                                        We are a dedicated team tirelessly working to deliver complex peptides and peptidomimetics to renowned academic,
-                                        biotech, and pharma partners globally.
+                                    GaloreTx®, based in Bangalore, specializes in peptide and peptidomimetic synthesis and discovery services. The company excels in designing innovative solutions to transform peptides into orally bioavailable small molecules, advancing drug discovery and therapeutic development.
+                                        <br />
                                     </p>
                                     <Link
                                         to="/BookanAppointment"
@@ -61,7 +57,7 @@ function Home() {
                         </div>
 
                         {/* Our Departments Section */}
-                        <div className="col-sm-12 col-md-4 our_depts_list">
+                        {/* <div className="col-sm-12 col-md-4 our_depts_list">
                             <div className="row m0 titleRow text-left">
                                 <h5 style={{ fontSize: '22px', fontWeight: 'bold', color: '#0072a0' }}>Variety of Services</h5>
                                 <h2 style={{ fontSize: '38px', fontWeight: '700', color: '#333' }}>Our Departments</h2>
@@ -74,7 +70,7 @@ function Home() {
                                 <li><span style={{ color: '#333', fontWeight: '500' }}><i className="fa fa-arrow-right" style={{ color: '#0072a0' }}></i> Neurology</span></li>
                                 <li><span style={{ color: '#333', fontWeight: '500' }}><i className="fa fa-arrow-right" style={{ color: '#0072a0' }}></i> Dental Care</span></li>
                             </ul>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>

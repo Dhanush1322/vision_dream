@@ -13,7 +13,7 @@ function SymenticService() {
       <section className="row page_intro">
         <div className="inner">
           <div className="container">
-            <h2>Symentic Service</h2>
+            <h2>Synthetic Service</h2>
           </div>
         </div>
       </section>
