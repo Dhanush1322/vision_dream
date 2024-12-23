@@ -23,10 +23,10 @@ const Header = () => {
             </div>
             <div className="fright contact_info">
               <div className="fleft email">
-                <img src="images/icons/envelope.jpg" alt="Email Icon" /> info@yourthemename.com
+                <img src="images/icons/envelope.jpg" alt="Email Icon" /> contact@galoretx.com
               </div>
               <div className="fleft phone">
-                <i className="fa fa-phone" /> <strong>123 7890 456</strong>
+                <i className="fa fa-phone" /> <strong>9880258258</strong>
               </div>
             </div>
           </div>
