@@ -39,15 +39,15 @@ function Contact() {
     <h3>Get in Touch</h3>
     <div className="info">
   <i className="fa fa-envelope" />
-  <span>info@medicalprotheme.com</span>
+  <span>contact@galoretx.com</span>
 </div>
 <div className="info">
   <i className="fa fa-phone" style={{ color: "#48bb78" }} />
-  <span>123 7890 456</span>
+  <span>9880258258</span>
 </div>
 <div className="info">
   <i className="fa fa-map-marker" style={{ color: "#f56565" }} /> {/* red color */}
-  <span>123 Main Street, Springfield, USA</span>
+  <span>Galore Tx Pharmaceuticals, Bangalore Bioinnovation Centre, Electronics City Phase 1, Electronic City, Karnataka 56010</span>
 </div>
 
   </div>
