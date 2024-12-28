@@ -14,12 +14,26 @@
   /* Responsive Image */
 .responsive-image {
     display: block;
-    width: calc(100% - 60px); /* Full width minus left and right margin */
+    width: calc(100% - 90px); /* Full width minus left and right margin */
     margin: 20px 80px;
     max-width: 100%;
     height: auto; /* Maintain aspect ratio */
   }
+  .content-container  ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 20px;
+  }
+  .content-container ul li {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
   
+  .contin-text{
+    font-size: large;
+    font-weight: 700;
+    font-family: sans-serif;
+  }
   /* Mobile View */
   @media (max-width: 768px) {
     .responsive-image {

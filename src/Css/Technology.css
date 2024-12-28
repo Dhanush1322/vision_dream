@@ -11,6 +11,13 @@
     max-width: 90%;
     margin: 0 auto;
 }
+.heading-technology{
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 800;
+    color: #0e7bbd;
+    font-size: 22px;
+}
 
 .technology-image {
     width: 100%; /* Default to 100% width for responsive design */

@@ -39,7 +39,7 @@ const Header = () => {
           <div className="navbar-header">
             {/* Logo */}
             <Link to="/" className="navbar-brand">
-              <img src="logo/logo.png" alt="Logo" style={{ width: '120px' }} />
+              <img src="logo/galoticslogo.png" alt="Logo" style={{ width: '100px' }} />
             </Link>
 
             {/* Mobile Toggle Button */}
@@ -73,7 +73,7 @@ const Header = () => {
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to="/about">About Galore TX</Link>
+                    <Link to="/about">About Galore Tx</Link>
                   </li>
                   <li>
                     <Link to="/FounderAndLeadership">Founders </Link>

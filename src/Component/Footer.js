@@ -9,7 +9,8 @@ const Footer = () => {
         <div className="footer-logo-description">
           {/* First div: Logo and Description */}
           <img src="logo/logo.png" alt="Logo" />
-          <p>Your trusted partner for medical solutions. Providing high-quality services for your healthcare needs.</p>
+          <p>Pushing the boundaries of peptide chemistry</p>
+          <p className="bottom-text">Your trusted partner for quality peptides, delivered on time, every time!</p>
         </div>
 
         {/* Second div: Links */}

@@ -33,7 +33,7 @@ const Banner = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       changeSlide(1);
-    }, 5000);
+    }, 2000);
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
 
@@ -48,8 +48,8 @@ const Banner = () => {
             <div className="slide" key={index}>
               <img src={`https://sapthapadhimatrimony.in/backend/${slide.imageUrls[0].path}`} alt={`Slide ${index + 1}`} />
               <div className="content">
-                <h2>{slide.title}</h2>
-                <p>{slide.description}</p>
+                {/* <h2>{slide.title}</h2> */}
+                {/* <p>{slide.description}</p> */}
               </div>
             </div>
           ))}

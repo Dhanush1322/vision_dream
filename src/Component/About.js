@@ -54,17 +54,16 @@ function About() {
                   </span>
                 </div>
                 <div className="media-body">
+
                   <p style={{ fontSize: '18px', fontWeight: '500', color: '#555', lineHeight: '1.6' }}>
-                    GaloreTx® with its vast experience in the peptide space is actively involved in peptide synthesis and in exploring
-                    new designs and synthetic strategies with its collaborators by pushing the boundaries of peptide chemistry with
-                    a mission to accelerate peptide drug discovery programs.
+                    At GaloreTx®, we leverage our extensive expertise in peptide chemistry to revolutionize drug discovery and development. Through innovative synthesis techniques and cutting-edge amino acid-inspired design strategies, we collaborate with our partners to advance peptide science
                     <br /><br />
                     We are a dedicated team tirelessly working to deliver complex peptides and peptidomimetics to renowned academic,
                     biotech, and pharma partners globally.
                   </p>
-                  <Link 
-                    to="/BookanAppointment" 
-                    className="view_all" 
+                  <Link
+                    to="/BookanAppointment"
+                    className="view_all"
                     style={{
                       fontSize: '16px',
                       fontWeight: 'bold',
