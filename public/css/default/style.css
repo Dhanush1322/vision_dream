@@ -2140,6 +2140,10 @@ footer .footer_bottom .copyright a {
   z-index: 0;
   opacity: 0.2;
 }
+.page_intro.row #innertwo:before{
+  width: 50%;
+}
+
 .page_intro.row .inner:after {
   content: '';
   width: 60px;

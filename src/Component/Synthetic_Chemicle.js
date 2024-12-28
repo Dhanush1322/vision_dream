@@ -29,9 +29,9 @@ function Synthetic_Chemical() {
 
         <h2>Scale of Synthesis</h2>
         <ul>
-          <li>mg scale to multi-gram scale synthesis of peptides (with feasibility of further scale-up to 500 grams)</li>
-          <li>Process optimization and technology transfer: non-GMP to GMP</li>
-          <li>Capability to carry out kilogram-scale peptidomimetics manufacturing</li>
+          <li>Milligram to multi-gram scale synthesis of peptides (with feasibility of further scale-up to 500 grams)</li>
+          <li>Process optimization and technology transfer for manufacturing : non GMP to GMP</li>
+          <li>Capability to carry out Multi-kilogram scale peptidomimetics manufacturing</li>
         </ul>
       </div>
 

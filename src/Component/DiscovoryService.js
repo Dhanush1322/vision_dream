@@ -20,24 +20,27 @@ function DiscovoryService() {
 
       {/* Content Section */}
       <div className="content-container">
-  <h3 style={{ fontSize: '3rem' }}>
-    Stabilization of Identified “Hit or Lead” Peptides
-  </h3>
-  <p style={{ fontSize: '2rem' }}>
-    For improving potency, plasma stability, and bioavailability, we employ various strategies, including:
-  </p>
-  <ul className="content-list" style={{ fontSize: '2rem' }}>
-    <li>Ala Scan</li>
-    <li>Lactam Scan</li>
-    <li>Disulfide Scan</li>
-    <li>Identification of Metabolic Hot Spots</li>
-    <li>Incorporation of D-Amino Acid</li>
-    <li>Reduced Amide Bond Scan</li>
-    <li>Incorporation of N-Methyl Amino Acids</li>
-    <li>Macrocyclization Strategies</li>
-    <li>Incorporation of Peptoid Units</li>
-  </ul>
-</div>
+        <h3 style={{ fontSize: '3rem' }}>
+          Stabilization of identified “Hit or Lead”  peptides for improving potency, plasma stability and bioavailability   </h3>
+
+        <ul className="content-list" style={{ fontSize: '2rem' }}>
+          <li>Ala Scan</li>
+          <li>Lactam Scan</li>
+          <li>Disulfide Scan</li>
+        </ul>
+        <h3 style={{ fontSize: '3rem' }}>
+        Stabilization of identified metabolic hot spots
+          </h3>
+
+        <ul className="content-list" style={{ fontSize: '2rem' }}>
+          <li>Identification of Metabolic Hot Spots</li>
+          <li>Incorporation of D-Amino Acid</li>
+          <li>Reduced Amide Bond Scan</li>
+          <li>Incorporation of N-Methyl Amino Acids</li>
+          <li>Macrocyclization Strategies</li>
+          <li>Incorporation of Peptoid Units</li>
+        </ul>
+      </div>
 
 
       <Footer />

@@ -6,60 +6,52 @@ import c1 from '../img/c1.jpg'
 import c2 from '../img/c2.jpg'
 import c3 from '../img/c3.jpg'
 import c4 from '../img/c4.jpg'
-
+import scalupimage from '../img/galoticscaleup.png'
+import galoticscupimage from '../img/galoticscupimage.png'
 
 function Product() {
   return (
     <>
-    <Header/>
-    <div className="product-container">
-      <div className="product-row">
-        {/* Product 1 */}
-        <div className="product-item">
-          <img src={c1} alt="Product 1" className="product-image" />
-          <p className="product-name">Product 1</p>
-        </div>
+      <Header />
+      <div className="product-container">
 
-        {/* Product 2 */}
-        <div className="product-item">
-          <img src={c2} alt="Product 2" className="product-image" />
-          <p className="product-name">Product 2</p>
+        <h2 className="scaleuptext">
+          Process development and validation for Kilogram scale synthesis
+        </h2>
+        <div className="process-content">
+          <ul>
+            <li>Shortlisted unnatural amino acids</li>
+            <li>Peptide building blocks</li>
+            <li>Linkers</li>
+            <li>Peptide fragments by avoiding preparative HPLC purification</li>
+          </ul>
         </div>
+        <h2 className="scaleuptext">
+          Process optimization and kilogram scale manufacturing
+        </h2>
+        <p className="blackfont">Route optimization and scale up of Acyl amino acids</p>
+        <div className="process-content">
+          <ul>
+            <li>Shortlisted unnatural amino acids</li>
+            <li>Peptide building blocks</li>
 
-        {/* Product 3 */}
-        <div className="product-item">
-          <img src={c3} alt="Product 3" className="product-image" />
-          <p className="product-name">Product 3</p>
+          </ul>
         </div>
+        <img src={scalupimage} alt="" className="scalupimage" />
 
-        {/* Product 4 */}
-        <div className="product-item">
-          <img src={c4} alt="Product 4" className="product-image" />
-          <p className="product-name">Product 4</p>
+        <p className="blackfont">Route optimization and manufacturing of dipeptide using acyl amino acids</p>
+        <div className="process-content">
+          <ul>
+            <li>In-house process developed and optimized for the synthesis of dipeptides</li>
+
+          </ul>
         </div>
-         {/* Product 4 */}
-         <div className="product-item">
-          <img src={c4} alt="Product 4" className="product-image" />
-          <p className="product-name">Product 4</p>
-        </div>
-         {/* Product 4 */}
-         <div className="product-item">
-          <img src={c4} alt="Product 4" className="product-image" />
-          <p className="product-name">Product 4</p>
-        </div>
-         {/* Product 4 */}
-         <div className="product-item">
-          <img src={c4} alt="Product 4" className="product-image" />
-          <p className="product-name">Product 4</p>
-        </div>
-         {/* Product 4 */}
-         <div className="product-item">
-          <img src={c4} alt="Product 4" className="product-image" />
-          <p className="product-name">Product 4</p>
-        </div>
+        <img src={galoticscupimage} alt="" className="scalupimage" />
+        <h2 className="scaleuptext">
+          Preparative HPLC was avoided and compound was purified by crystallization/precipitation techniquesDelivered 2 Kg of dipeptide using in-house developed process
+        </h2>
       </div>
-    </div>
-    <Footer/>
+      <Footer />
     </>
   );
 }
