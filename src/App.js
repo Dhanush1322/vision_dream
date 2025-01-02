@@ -22,6 +22,7 @@ import EditPassword from './dashboard/pages/EditPasswordPage';
 import AddBanner from './dashboard/pages/AddBanner';
 import UpadateBanner from './dashboard/pages/UpadateBanner';
 import EditBanner from './dashboard/pages/EditBanner';
+import CaseStudy from './Component/CaseStudy';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="/BusinessModule" element={<BusinessModule />} />
         <Route path="/SymenticService" element={<SymenticService />} />
         <Route path="/DiscovoryService" element={<DiscovoryService />} />
+        <Route path='/case-study' element={<CaseStudy/>}/>
         
           {/*Technology Routes */}
         <Route path="/Technology" element={<Technology />} />

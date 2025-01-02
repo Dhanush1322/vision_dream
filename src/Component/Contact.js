@@ -13,8 +13,7 @@ function Contact() {
         <div className="row m0 inner">
           <div className="container">
             <div className="row">
-              <h5>Contact Us</h5>
-              <h2>Get in touch with Doctor</h2>
+              <h2>Contact Us</h2>
             </div>
           </div>
         </div>

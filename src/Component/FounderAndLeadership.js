@@ -15,7 +15,7 @@ function FounderAndLeadership() {
         <div className="row m0 inner">
           <div className="container">
             <div className="row">
-             
+
               <h2>Founders</h2>
             </div>
           </div>
@@ -72,6 +72,12 @@ function FounderAndLeadership() {
                       <i className="fa fa-google-plus" />
                     </Link>
                   </li>
+                  <li>
+                    <Link to="#">
+                      <i className="fa fa-linkedin" />
+                    </Link>
+                  </li>
+
                 </ul>
               </div>
             </div>
@@ -106,6 +112,11 @@ function FounderAndLeadership() {
                   <li>
                     <Link to="#">
                       <i className="fa fa-google-plus" />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="#">
+                      <i className="fa fa-linkedin" />
                     </Link>
                   </li>
                 </ul>
@@ -146,13 +157,18 @@ function FounderAndLeadership() {
                       <i className="fa fa-google-plus" />
                     </Link>
                   </li>
+                  <li>
+                    <Link to="#">
+                      <i className="fa fa-linkedin" />
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
-         </div>
+        </div>
       </section>
-     <Footer />
+      <Footer />
     </div>
   );
 }

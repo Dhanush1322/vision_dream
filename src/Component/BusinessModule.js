@@ -34,7 +34,7 @@ function BusinessModule() {
 
       {/* Committed content section */}
       <div className="information">
-        <p style={{ marginBottom: '15px' }}>
+        <p style={{ marginBottom: '15px',width:'97%',maringInline:'auto',textAlign:'center' }}>
           Committed to efficiency and quality in delivering peptides with excellent synthetic and analytical capabilities gleaned from our collaborations with large pharma and biotech globally.
         </p>
       </div>

@@ -38,12 +38,12 @@ function About() {
         <div className="container">
           <div className="row">
             {/* Who We Are Content */}
-            <div className="col-sm-12 col-md-8 who_weR" style={{width:'100%'}}>
+            <div className="col-sm-12 col-md-8 who_weR" style={{width:'100%',padding:'15px 15px 20px'}}>
               <div className="row m0 titleRow text-left">
-                <h5 style={{ fontSize: '22px', fontWeight: 'bold', color: '#0072a0' }}>Who We Are</h5>
-                <h2 style={{ fontSize: '38px', fontWeight: '700', color: '#333' }}>About GaloreTx®</h2>
+                {/* <h5 style={{ fontSize: '22px', fontWeight: 'bold', color: '#0072a0' }}>Who We Are</h5> */}
+                <h2 style={{ fontSize: '31px', fontWeight: '700', color: '#333'}}>Peptide chemistry is at the heart of GaloreTx®.</h2>
               </div>
-              <div className="media">
+              <div className="media" id="padding-top-zero">
                 <div className="media-left">
                   <span>
                     <img
@@ -56,8 +56,7 @@ function About() {
                 <div className="media-body">
 
                   <p style={{ fontSize: '18px', fontWeight: '500', color: '#555', lineHeight: '1.6' }}>
-                    Peptide chemistry is at the heart of GaloreTx®.
-                    <br /><br />
+                   
                     At GaloreTx®, we leverage our extensive expertise in peptide chemistry to revolutionize drug discovery and development. Through innovative synthesis techniques and cutting-edge amino acid-inspired design strategies, we collaborate with our partners to advance peptide science.
                     <br /><br />
                     Our proprietary approach enables the transformation of peptides into orally bioavailable molecules, paving the way for breakthroughs in peptide drug discovery programs and pushing the boundaries of therapeutic innovation.

@@ -28,7 +28,6 @@ function AnalyticleCapability() {
             <li>Analytical HPLCs</li>
             <li>Preparative HPLCs</li>
             <li>Mass Spectrometer</li>
-            <li>Access to additional instrumentation: MALDI, etc.</li>
           </ul>
 
           <h2>Analytical R&D</h2>
