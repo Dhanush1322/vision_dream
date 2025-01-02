@@ -2143,13 +2143,18 @@ footer .footer_bottom .copyright a {
 .page_intro.row #innertwo:before{
   width: 50%;
 }
+#padding-top-zero{
+  padding-top:0px
+}
 
 .page_intro.row .inner:after {
   content: '';
   width: 60px;
   height: 60px;
-  background: url(../../images/pages/page_drop.png) no-repeat scroll center center #2e9bdc;
+  background: url(../../images/pages/galoticslogo.png) no-repeat scroll center center white;
   border-radius: 100%;
+  background-position: center;
+  background-size:contain;
   position: absolute;
   bottom: -30px;
   left: -webkit-calc(50% - 30px);

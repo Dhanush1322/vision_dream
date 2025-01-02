@@ -115,7 +115,7 @@ function BookanAppointment() {
         <div className="row m0 inner">
           <div className="container">
             <div className="row">
-              <h2>Book An Appointment</h2>
+              <h2>Career@GaloreTx</h2>
             </div>
           </div>
         </div>

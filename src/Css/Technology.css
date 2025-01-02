@@ -11,6 +11,15 @@
     max-width: 90%;
     margin: 0 auto;
 }
+.paragraph-title{
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    padding-inline: 20px;
+    text-align: center;
+
+    color: black;
+}
 .heading-technology{
     text-align: center;
     font-family: sans-serif;
@@ -18,6 +27,32 @@
     color: #0e7bbd;
     font-size: 22px;
 }
+.tablebox{
+    width: 92%;
+    margin-inline: auto;
+    overflow-x: scroll;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+  }
+  th {
+    background-color: #4472c4;
+    color: white;
+  }
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  tr:hover {
+    background-color: #f1f1f1;
+  }
 
 .technology-image {
     width: 100%; /* Default to 100% width for responsive design */

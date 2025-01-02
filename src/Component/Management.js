@@ -49,7 +49,7 @@ function Management() {
                   </div>
                 </Link>
                 <p>
-                  Sasikumar (Sasi) brings more than 20 years of expertise in peptide drug discovery and development. Before co-founding GaloreTx, he played a pivotal role in establishing the peptide department at Aurigene Oncology, a prominent Indian biotech and CRO. As Research Director, he led a team of over 50 scientists and contributed to the development of numerous innovative drugs in cancer immunotherapy, including one now in Phase 3 clinical trials. Under his leadership, GaloreTx has become a trusted partner for biotech and pharmaceutical companies focused on peptide-based solutions.
+                  Sasikumar (Sasi) brings more than 20 years of expertise in peptide drug discovery and development. Before co-founding GaloreTx, he played a pivotal role in establishing the peptide department at Aurigene Oncology, a prominent Indian biotech. As Research Director, he led a team of over 50 scientists and contributed to the development of numerous innovative drugs in cancer immunotherapy, including one now in Phase 3 clinical trials. Under his leadership, GaloreTx has become a trusted partner for biotech and pharmaceutical companies focused on peptide-based solutions.
                 </p>
                 <ul className="social_list">
                   <li>
@@ -65,6 +65,11 @@ function Management() {
                   <li>
                     <Link to="#">
                       <i className="fa fa-google-plus" />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="#">
+                      <i className="fa fa-linkedin" />
                     </Link>
                   </li>
                 </ul>
@@ -98,6 +103,11 @@ function Management() {
                   <li>
                     <Link to="#">
                       <i className="fa fa-google-plus" />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="#">
+                      <i className="fa fa-linkedin" />
                     </Link>
                   </li>
                 </ul>
