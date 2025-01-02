@@ -19,7 +19,7 @@ const Header = () => {
               <strong>
                 <i className="fa fa-clock-o" /> Schedule
               </strong>
-              : Monday - Saturday - 8:00 - 18:00, Sunday - 8:00 - 14:00
+              : Monday - Friday - 8:00 - 18:00
             </div>
             <div className="fright contact_info">
               <div className="fleft email">

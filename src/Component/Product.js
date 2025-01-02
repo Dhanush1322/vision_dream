@@ -54,8 +54,8 @@ function Product() {
           Preparative HPLC was avoided and compound was purified by crystallization/precipitation techniquesDelivered 2 Kg of dipeptide using in-house developed process
         </h2> */}
         <div className="case-study-link">
-          <p>See </p>
-          <Link to="/case-study" className="case-study-btn">Case Study</Link>
+         
+          <Link to="/case-study" className="case-study-btn">View More</Link>
         </div>
 
       </div>
