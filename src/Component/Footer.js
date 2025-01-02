@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-logo-description">
           {/* First div: Logo and Description */}
-          <img src="logo/logo.png" alt="Logo" />
+          <img src="logo/logo.png" alt="Logo" style={{backgroundColor:'#011625'}} />
           <p>Pushing the boundaries of peptide chemistry</p>
           <p className="bottom-text">Your trusted partner for quality peptides, delivered on time, every time!</p>
         </div>
