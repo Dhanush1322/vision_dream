@@ -115,13 +115,15 @@ function BookanAppointment() {
         <div className="row m0 inner">
           <div className="container">
             <div className="row">
-              <h2>Career@GaloreTx</h2>
+              <h2 style={{ textTransform: 'none'}}>Career@GaloreTx</h2>
             </div>
           </div>
         </div>
       </section>
 
       <div className="book-appointment">
+      <p style={{fontSize:'20px',textAlign:'center'}}>if you are interested write to us</p>
+
         <h2>Book an Appointment</h2>
 
         {/* Show success message if form is submitted */}
