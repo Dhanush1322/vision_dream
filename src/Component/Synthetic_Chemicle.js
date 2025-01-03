@@ -18,6 +18,8 @@ function Synthetic_Chemical() {
           </div>
         </div>
       </section>
+      <h3 style={{textAlign:'center',color:'#0e7bbd',fontSize:'15px',fontWeight:'bolder',fontFamily:'unset'}}>GaloreTx Pharmaceuticals</h3>
+
     <div className="synthetic-chemical-container">
       <div className="left-content">
         <h2>Infrastructure</h2>

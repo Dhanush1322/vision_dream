@@ -17,10 +17,10 @@ function Home() {
                 <div className="container">
                     <div className="row">
                         {/* Who We Are Content */}
-                        <div className="col-sm-12 col-md-8 who_weR" style={{width:'100%'}} >
+                        <div className="col-sm-12 col-md-8 who_weR" style={{ width: '100%' }} >
                             <div className="row m0 titleRow text-left">
                                 <h5 style={{ fontSize: '22px', fontWeight: 'bold', color: '#0072a0' }}>Who We Are</h5>
-                                <h2 style={{ fontSize: '38px', fontWeight: '700', color: '#333' }}>About  <span style={{textTransform: 'none',}}> GaloreTx®</span></h2>
+                                <h2 style={{ fontSize: '38px', fontWeight: '700', color: '#333' }}>About  <span style={{ textTransform: 'none', }}> GaloreTx®</span></h2>
                             </div>
                             <div className="media">
                                 <div className="media-left">
@@ -34,7 +34,7 @@ function Home() {
                                 </div>
                                 <div className="media-body">
                                     <p style={{ fontSize: '18px', fontWeight: '500', color: '#555', lineHeight: '1.6' }}>
-                                       <span style={{textTransform: 'none',}}> GaloreTx®</span>, based in Bangalore, specializes in peptide and peptidomimetic synthesis and discovery services. The company excels in designing innovative solutions to transform peptides into orally bioavailable small molecules, advancing drug discovery and therapeutic development.        </p>
+                                        <span style={{ textTransform: 'none', }}> GaloreTx®</span>, based in Bangalore, specializes in peptide and peptidomimetic synthesis and discovery services. The company excels in designing innovative solutions to transform peptides into orally bioavailable small molecules, advancing drug discovery and therapeutic development.        </p>
                                     <Link
                                         to="/BookanAppointment"
                                         className="view_all"
@@ -244,6 +244,11 @@ function Home() {
                                             <i className="fa fa-google-plus" />
                                         </Link>
                                     </li>
+                                    <li>
+                                        <Link to="#">
+                                            <i className="fa fa-linkedin" />
+                                        </Link>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -278,6 +283,11 @@ function Home() {
                                     <li>
                                         <Link to="#">
                                             <i className="fa fa-google-plus" />
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="#">
+                                            <i className="fa fa-linkedin" />
                                         </Link>
                                     </li>
                                 </ul>
@@ -316,6 +326,11 @@ function Home() {
                                     <li>
                                         <Link to="#">
                                             <i className="fa fa-google-plus" />
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="#">
+                                            <i className="fa fa-linkedin" />
                                         </Link>
                                     </li>
                                 </ul>
@@ -368,13 +383,15 @@ function Home() {
                         <div className="col-sm-4 recent_post">
                             <div className="row m0 inner">
                                 <div className="postText row m0">
-                                    Etiam tristique sagittis pulvinar. Cras scelerisque dui ut, bibendum ante. dit neque eget lobortis. Nam eleifend sollicitudin nulla quis Interdum et malesuada fames.
+                                    "Working with this team has been an absolute pleasure. Their professionalism and attention to detail exceeded my expectations. Highly recommended!"
                                 </div>
                                 <div className="media authorMeta">
-                                    <div className="media-left"><img src="images/pages/doctors/1.png" alt="" /></div>
+                                    <div className="media-left">
+                                        <img src="images/pages/doctors/1.png" alt="Johnathan Doe" />
+                                    </div>
                                     <div className="media-body media-middle">
-                                        <h5>Johnathan doe</h5>
-                                        <div className="row designation">www.themedesigner.in</div>
+                                        <h5>Johnathan Doe</h5>
+                                        <div className="row designation">CEO, The Design Studio</div>
                                     </div>
                                 </div>
                             </div>
@@ -382,13 +399,15 @@ function Home() {
                         <div className="col-sm-4 recent_post">
                             <div className="row m0 inner">
                                 <div className="postText row m0">
-                                    Etiam tristique sagittis pulvinar. Cras scelerisque dui ut, bibendum ante. dit neque eget lobortis. Nam eleifend sollicitudin nulla quis Interdum et malesuada fames.
+                                    "Their innovative solutions and creative mindset helped us achieve our goals seamlessly. Fantastic experience working with them!"
                                 </div>
                                 <div className="media authorMeta">
-                                    <div className="media-left"><img src="images/pages/doctors/1.png" alt="" /></div>
+                                    <div className="media-left">
+                                        <img src="images/pages/doctors/1.png" alt="Angelina Johnson" />
+                                    </div>
                                     <div className="media-body media-middle">
-                                        <h5>Angelina johnson</h5>
-                                        <div className="row designation">www.themeforest.net</div>
+                                        <h5>Angelina Johnson</h5>
+                                        <div className="row designation">Founder, Creative Co.</div>
                                     </div>
                                 </div>
                             </div>
@@ -396,18 +415,21 @@ function Home() {
                         <div className="col-sm-4 recent_post">
                             <div className="row m0 inner">
                                 <div className="postText row m0">
-                                    Etiam tristique sagittis pulvinar. Cras scelerisque dui ut, bibendum ante. dit neque eget lobortis. Nam eleifend sollicitudin nulla quis Interdum et malesuada fames.
+                                    "I was truly impressed by their ability to deliver high-quality results in such a short time frame. They are my go-to team for any project."
                                 </div>
                                 <div className="media authorMeta">
-                                    <div className="media-left"><img src="images/pages/doctors/1.png" alt="" /></div>
+                                    <div className="media-left">
+                                        <img src="images/pages/doctors/1.png" alt="Bekka Adkins" />
+                                    </div>
                                     <div className="media-body media-middle">
-                                        <h5>bekka adkins</h5>
-                                        <div className="row designation">www.themedesigner.in</div>
+                                        <h5>Bekka Adkins</h5>
+                                        <div className="row designation">Managing Director, Adkins Solutions</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </section>
             <Footer />

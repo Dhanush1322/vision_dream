@@ -21,6 +21,8 @@ function Technology() {
           </div>
         </div>
       </section>
+      <h3 style={{textAlign:'center',color:'#0e7bbd',fontSize:'15px',fontWeight:'bolder',fontFamily:'unset'}}>GaloreTx Pharmaceuticals</h3>
+
       <h3 className="heading-technology">Orally bioavailable Amino acid Inspired Small Molecules (AISM)
       </h3>
 

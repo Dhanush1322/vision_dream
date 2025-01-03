@@ -39,7 +39,9 @@ const Header = () => {
             </div>
             <div className="fright contact_info">
               <div className="fleft email">
-                <img src="images/icons/envelope.jpg" alt="Email Icon" /> contact@galoretx.com
+                <img src="images/icons/envelope.jpg" alt="Email Icon" /> <span style={{  color: '#0072a0', fontWeight: 'bold', padding: '2px 4px' }}>
+    contact@galoretx.com
+  </span>
               </div>
               <div className="fleft phone">
                 <i className="fa fa-phone" /> <strong>9880258258</strong>
@@ -55,7 +57,7 @@ const Header = () => {
           <div className="navbar-header">
             {/* Logo */}
             <Link to="/" className="navbar-brand">
-              <img src="logo/logo.png" alt="Logo" style={{ width: '95px',background: 'transparent' }} />
+              <img src="logo/logo.png" alt="Logo" style={{ width: '85px',background: 'transparent' }} />
             </Link>
 
             {/* Mobile Toggle Button */}

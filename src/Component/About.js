@@ -20,6 +20,8 @@ function About() {
           </div>
         </div>
       </section>
+      <h3 style={{textAlign:'center',color:'#0e7bbd',fontSize:'15px',fontWeight:'bolder',fontFamily:'unset'}}>GaloreTx Pharmaceuticals</h3>
+
 
       {/* Breadcrumb Section */}
       <section className="row breadcrumbRow">
@@ -46,7 +48,7 @@ function About() {
                   <span style={{
                     textTransform: 'none',
                     marginLeft:'5px',
-                    color: '#0e7bbd', // Highlight color
+                    color: '#0e7bbd', 
                     fontWeight: 'bold',
                     backgroundColor: '#f2f4f9',
                     padding: '2px 5px',
@@ -94,9 +96,6 @@ function About() {
                 </div>
               </div>
             </div>
-
-            {/* Our Departments Section */}
-
           </div>
         </div>
       </section>
