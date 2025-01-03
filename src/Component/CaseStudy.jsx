@@ -48,7 +48,7 @@ function CaseStudy() {
         </div>
         <img src={galoticscupimage} alt="" className="scalupimage" />
         <h2 className="scaleuptext" style={{fontSize:'22px'}}>
-          Preparative HPLC was avoided and compound was purified by crystallization/precipitation techniquesDelivered 2 Kg of dipeptide using in-house developed process
+          Preparative HPLC was avoided and compound was purified by crystallization/precipitation techniques. <br/> <br/> Delivered multi-kilograms of dipeptide using in house developed process
         </h2>
         </div>
     <Footer />

@@ -9,6 +9,21 @@
     padding-right: 200px;
     justify-content: space-between;
   }
+
+  
+  .bussinessage-module-text {
+    margin-left: 5px; /* Spacing between text and link */
+    padding: 8px 16px; /* Add padding for the button feel */
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff; /* Text color */
+    background-color: #145096; /* LinkedIn blue for button background */
+    text-decoration: none;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  }
+  
+  
   
   /* Child div styles */
   .childDiv {

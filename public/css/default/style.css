@@ -2151,7 +2151,7 @@ footer .footer_bottom .copyright a {
   content: '';
   width: 60px;
   height: 60px;
-  background: url(../../images/pages/galoticslogo.png) no-repeat scroll center center white;
+  background: url(../../images/pages/galoticlogowithouttext.png) no-repeat scroll center center white;
   border-radius: 100%;
   background-position: center;
   background-size:contain;
@@ -2356,6 +2356,7 @@ footer .footer_bottom .copyright a {
   line-height: 1;
   margin: 0;
 }
+
 .comments .comment .comment_body p {
   font-family: 'Karla', sans-serif;
   font-size: 16px;

@@ -23,6 +23,7 @@ import AddBanner from './dashboard/pages/AddBanner';
 import UpadateBanner from './dashboard/pages/UpadateBanner';
 import EditBanner from './dashboard/pages/EditBanner';
 import CaseStudy from './Component/CaseStudy';
+import Generation from './Component/Generation';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route path="/SymenticService" element={<SymenticService />} />
         <Route path="/DiscovoryService" element={<DiscovoryService />} />
         <Route path='/case-study' element={<CaseStudy/>}/>
+        <Route path='/view-more' element={<Generation/>}/>
         
           {/*Technology Routes */}
         <Route path="/Technology" element={<Technology />} />

@@ -8,8 +8,8 @@ const Footer = () => {
       <div className="container">
         <div className="footer-logo-description">
           {/* First div: Logo and Description */}
-          <img src="logo/logo.png" alt="Logo" style={{backgroundColor:'#011625'}} />
-          <p>Pushing the boundaries of peptide chemistry</p>
+          <img src="logo/logo.png" alt="Logo" style={{backgroundColor:'white',borderRadius:'20px',padding:'10px'}} />
+          <p className="responsive-text-size-footer" style={{marginTop:'10px'}}>Pushing the boundaries of peptide chemistry</p>
           <p className="bottom-text">Your trusted partner for quality peptides, delivered on time, every time!</p>
         </div>
 
@@ -38,7 +38,7 @@ const Footer = () => {
         <div className="footer-contact-info">
           <h5>Contact Us</h5>
           <ul className="list-unstyled">
-            <li><i className="fa fa-map-marker"></i>Galore Tx Pharmaceuticals, Bangalore Bioinnovation Centre, Electronics City Phase 1, Electronic City, Karnataka 56010</li>
+            <li ><i className="fa fa-map-marker"></i>Galore Tx Pharmaceuticals, Bangalore Bioinnovation Centre, Electronics City Phase 1, Electronic City, Karnataka 56010</li>
             <li><i className="fa fa-envelope"></i>contact@galoretx.com</li>
             <li><i className="fa fa-phone"></i>9880258258</li>
           </ul>
