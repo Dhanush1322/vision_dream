@@ -16,6 +16,17 @@ function Product() {
   return (
     <>
       <Header />
+      <section className="row page_intro">
+        <div className="row m0 inner">
+          <div className="container">
+            <div className="row">
+              <h2 style={{textTransform:'none'}}>ScaleUp</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <h3 style={{textAlign:'center',color:'#0e7bbd',fontSize:'15px',fontWeight:'bolder',fontFamily:'unset'}}>GaloreTx Pharmaceuticals</h3>
+
       <div className="product-container">
 
         <h2 className="scaleuptext">

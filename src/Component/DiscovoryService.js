@@ -17,6 +17,8 @@ function DiscovoryService() {
           </div>
         </div>
       </section>
+      <h3 style={{textAlign:'center',color:'#0e7bbd',fontSize:'15px',fontWeight:'bolder',fontFamily:'unset'}}>GaloreTx Pharmaceuticals</h3>
+
 
       {/* Content Section */}
       <div className="content-container">

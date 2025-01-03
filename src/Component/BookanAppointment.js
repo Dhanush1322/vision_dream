@@ -120,6 +120,7 @@ function BookanAppointment() {
           </div>
         </div>
       </section>
+      <h3 style={{textAlign:'center',color:'#0e7bbd',fontSize:'15px',fontWeight:'bolder',fontFamily:'unset'}}>GaloreTx Pharmaceuticals</h3>
 
       <div className="book-appointment">
       <p style={{fontSize:'20px',textAlign:'center'}}>if you are interested write to us</p>

@@ -20,6 +20,8 @@ function Generation() {
           </div>
         </div>
       </section>
+      <h3 style={{textAlign:'center',color:'#0e7bbd',fontSize:'15px',fontWeight:'bolder',fontFamily:'unset'}}>GaloreTx Pharmaceuticals</h3>
+
     <div className="synthetic-chemical-container">
     <h3 className="heading-technology">Generation of Amino acid Inspired Small Molecules (AISM)</h3>
       <p className="paragraph-title">Concept clinically validated as inhibitors of protein-protein interactions</p>

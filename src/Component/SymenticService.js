@@ -17,6 +17,8 @@ function SymenticService() {
           </div>
         </div>
       </section>
+      <h3 style={{textAlign:'center',color:'#0e7bbd',fontSize:'15px',fontWeight:'bolder',fontFamily:'unset'}}>GaloreTx Pharmaceuticals</h3>
+
 
       {/* Content Section with 80% Width */}
       <div className="content-container">
