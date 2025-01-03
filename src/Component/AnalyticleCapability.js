@@ -37,7 +37,7 @@ function AnalyticleCapability() {
             
             
           </ul>
-          <h3>Preparative scale HPLC purification</h3>
+          <h2>Preparative scale HPLC purification</h2>
           <ul>
           <li>10 mm to 50 mm HPLC column</li>
           <li>Capability to carry out gram-scale purification</li>

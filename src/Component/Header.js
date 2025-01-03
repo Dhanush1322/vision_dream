@@ -9,6 +9,22 @@ const Header = () => {
     setIsNavCollapsed(!isNavCollapsed);
   };
 
+  let styles={
+    navLink: {
+      color: 'black',
+      padding: '10px 15px',
+      textTransform: 'none',
+      fontSize:'13px',
+      fontWeight: 'bold',
+      textDecoration: 'none',
+      transition: 'color 0.3s, background-color 0.3s',
+    },
+    navLinkHover: {
+      backgroundColor: '#495057',
+      color: '#ffc107',
+    },
+  }
+
   return (
     <>
       {/* Top Bar Section */}
@@ -34,12 +50,12 @@ const Header = () => {
       </section>
 
       {/* Navigation Bar Section */}
-      <nav className="navbar navbar-default navbar-static-top navbar2" style={{ height: '85px' }}>
+      <nav className="navbar navbar-default navbar-static-top navbar2" style={{ height: '90px' }}>
         <div className="container">
           <div className="navbar-header">
             {/* Logo */}
             <Link to="/" className="navbar-brand">
-              <img src="logo/galoticslogo.png" alt="Logo" style={{ width: '100px' }} />
+              <img src="logo/logo.png" alt="Logo" style={{ width: '95px',background: 'transparent' }} />
             </Link>
 
             {/* Mobile Toggle Button */}
@@ -63,82 +79,82 @@ const Header = () => {
             <ul className="nav navbar-nav navbar-right" style={{ paddingTop: '15px' }}>
               {/* Home Link */}
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/" style={styles.navLink}><i className="fa fa-home" style={{ marginRight: '2px' }} /> Home</Link>
               </li>
 
               {/* About Dropdown */}
               <li className="dropdown">
-                <Link to="#" className="dropdown-toggle">
-                  About
+                <Link to="#" style={styles.navLink}  className="dropdown-toggle">
+                <i className="fa fa-info-circle" style={{ marginRight: '2px' }} /> About
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to="/about">About Galore Tx</Link>
+                    <Link to="/about" ><i className="fa fa-info" style={{ marginRight: '4px' }} /> About Galore Tx</Link>
                   </li>
                   <li>
-                    <Link to="/FounderAndLeadership">Founders </Link>
+                    <Link to="/FounderAndLeadership"><i className="fa fa-user" style={{ marginRight: '4px' }} /> Founders </Link>
                   </li>
                   {/* <li>
                     <Link to="/Leadership">Leadership</Link>
                   </li> */}
                   <li>
-                    <Link to="/Management">Management</Link>
+                    <Link to="/Management"><i className="fa fa-briefcase" style={{ marginRight: '4px' }} />Management</Link>
                   </li>
                   <li>
-                    <Link to="/Team">Team</Link>
+                    <Link to="/Team"><i className="fa fa-users" style={{ marginRight: '4px' }} /> Team</Link>
                   </li>
                 </ul>
               </li>
 
               {/* Services Dropdown */}
               <li className="dropdown">
-                <Link to="#" className="dropdown-toggle">
-                  Services
+                <Link to="#" style={styles.navLink} className="dropdown-toggle">
+                <i className="fa fa-cogs" style={{ marginRight: '2px' }} /> Services
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to="/BusinessModule">Business Model</Link>
+                    <Link to="/BusinessModule"><i class="fa fa-briefcase" style={{ marginRight: '8px' }}/> Business Model</Link>
                   </li>
                   <li>
-                    <Link to="/SymenticService">Synthetic Service</Link>
+                    <Link to="/SymenticService"><i className="fa fa-flask" style={{ marginRight: '8px' }} /> Synthetic Service</Link>
                   </li>
                   <li>
-                    <Link to="/DiscovoryService">Discovery Service</Link>
+                    <Link to="/DiscovoryService"><i className="fa fa-search" style={{ marginRight: '8px' }} /> Discovery Service</Link>
                   </li>
                 </ul>
               </li>
 
               {/* Product and Contact Links */}
               <li>
-                <Link to="/Technology">Technology</Link>
+                <Link style={styles.navLink} to="/Technology"> <i className="fa fa-laptop" style={{ marginRight: '2px' }} /> Technology</Link>
               </li>
                {/* Infrastructure  Dropdown */}
                <li className="dropdown">
-                <Link to="#" className="dropdown-toggle">
-                  Infrastructure
+                <Link to="#" style={styles.navLink} className="dropdown-toggle">
+                <i className="fa fa-building" style={{ marginRight: '2px' }} /> Infrastructure
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to="/Synthetic_Chemicle">Synthetic Chemistry</Link>
+                    <Link to="/Synthetic_Chemicle"> <i className="fa fa-flask" style={{ marginRight: '8px' }} /> Synthetic Chemistry</Link>
                   </li>
                   <li>
-                    <Link to="/AnalyticleCapability">Analytical Capabilities</Link>
+                    <Link to="/AnalyticleCapability"><i class="fa fa-bar-chart" style={{ marginRight: '8px' }}/> Analytical Capabilities</Link>
                   </li>
                   
                 </ul>
               </li>
               <li>
-                <Link to="/product">ScaleUp</Link>
+                <Link style={styles.navLink} to="/product"> <i class="fa fa-bar-chart" style={{ marginRight: '2px' }}/>                ScaleUp</Link>
               </li>
               <li>
-                <Link to="/contact">Contact</Link>
+                <Link style={styles.navLink} to="/contact"> <i className="fa fa-envelope" style={{ marginRight: '2px' }} /> Contact</Link>
               </li>
               <li>
-                <Link to="/BookanAppointment">Book Appointment</Link>
+                <Link style={styles.navLink} to="/BookanAppointment"> <i className="fa fa-calendar" style={{ marginRight: '2px' }} /> Career@GaloreTx</Link>
               </li>
               
               <li>
-                <Link to="/Login">Login</Link>
+                <Link style={styles.navLink} to="/Login"> <i className="fa fa-sign-in" style={{ marginRight: '2px' }} />Login</Link>
               </li>
               
             </ul>

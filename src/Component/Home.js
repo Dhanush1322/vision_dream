@@ -20,7 +20,7 @@ function Home() {
                         <div className="col-sm-12 col-md-8 who_weR" style={{width:'100%'}} >
                             <div className="row m0 titleRow text-left">
                                 <h5 style={{ fontSize: '22px', fontWeight: 'bold', color: '#0072a0' }}>Who We Are</h5>
-                                <h2 style={{ fontSize: '38px', fontWeight: '700', color: '#333' }}>About GaloreTx®</h2>
+                                <h2 style={{ fontSize: '38px', fontWeight: '700', color: '#333' }}>About  <span style={{textTransform: 'none',}}> GaloreTx®</span></h2>
                             </div>
                             <div className="media">
                                 <div className="media-left">
@@ -34,7 +34,7 @@ function Home() {
                                 </div>
                                 <div className="media-body">
                                     <p style={{ fontSize: '18px', fontWeight: '500', color: '#555', lineHeight: '1.6' }}>
-                                        GaloreTx®, based in Bangalore, specializes in peptide and peptidomimetic synthesis and discovery services. The company excels in designing innovative solutions to transform peptides into orally bioavailable small molecules, advancing drug discovery and therapeutic development.        </p>
+                                       <span style={{textTransform: 'none',}}> GaloreTx®</span>, based in Bangalore, specializes in peptide and peptidomimetic synthesis and discovery services. The company excels in designing innovative solutions to transform peptides into orally bioavailable small molecules, advancing drug discovery and therapeutic development.        </p>
                                     <Link
                                         to="/BookanAppointment"
                                         className="view_all"

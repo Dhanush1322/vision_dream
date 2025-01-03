@@ -22,12 +22,12 @@ function BusinessModule() {
 
       <div className="parentDiv">
         <div className="childDiv">
-          <h3 style={{ textAlign: 'center', marginBottom: '10px' }}>Preferred service partner</h3>
+          <h3 style={{ textAlign: 'center', marginBottom: '10px' }} className="bussinessage-module-text">Stand-alone services:<br/>Preferred service partner</h3>
           <img src={b1} alt="Business module layout" className="image" />
         </div>
 
         <div className="childDiv">
-          <h3 style={{ textAlign: 'center', marginBottom: '10px' }}>Value added drug discovery services</h3>
+          <h3 style={{ textAlign: 'center', marginBottom: '10px' }} className="bussinessage-module-text">Value added drug discovery services</h3>
           <img src={b2} alt="Business module example" className="image" />
         </div>
       </div>

@@ -38,10 +38,23 @@ function About() {
         <div className="container">
           <div className="row">
             {/* Who We Are Content */}
-            <div className="col-sm-12 col-md-8 who_weR" style={{width:'100%',padding:'15px 15px 20px'}}>
+            <div className="col-sm-12 col-md-8 who_weR" style={{ width: '100%', padding: '15px 15px 20px' }}>
               <div className="row m0 titleRow text-left">
                 {/* <h5 style={{ fontSize: '22px', fontWeight: 'bold', color: '#0072a0' }}>Who We Are</h5> */}
-                <h2 style={{ fontSize: '31px', fontWeight: '700', color: '#333'}}>Peptide chemistry is at the heart of GaloreTx®.</h2>
+                <h2 style={{ fontSize: '31px', fontWeight: '700', color: '#333',textTransform: 'none', }}>
+                  Peptide chemistry is at the heart of
+                  <span style={{
+                    textTransform: 'none',
+                    marginLeft:'5px',
+                    color: '#0e7bbd', // Highlight color
+                    fontWeight: 'bold',
+                    backgroundColor: '#f2f4f9',
+                    padding: '2px 5px',
+                    borderRadius: '4px'
+                  }}>
+                    GaloreTx®
+                  </span>.
+                </h2>
               </div>
               <div className="media" id="padding-top-zero">
                 <div className="media-left">
@@ -56,7 +69,7 @@ function About() {
                 <div className="media-body">
 
                   <p style={{ fontSize: '18px', fontWeight: '500', color: '#555', lineHeight: '1.6' }}>
-                   
+
                     At GaloreTx®, we leverage our extensive expertise in peptide chemistry to revolutionize drug discovery and development. Through innovative synthesis techniques and cutting-edge amino acid-inspired design strategies, we collaborate with our partners to advance peptide science.
                     <br /><br />
                     Our proprietary approach enables the transformation of peptides into orally bioavailable molecules, paving the way for breakthroughs in peptide drug discovery programs and pushing the boundaries of therapeutic innovation.
@@ -83,7 +96,7 @@ function About() {
             </div>
 
             {/* Our Departments Section */}
-           
+
           </div>
         </div>
       </section>
