@@ -115,7 +115,7 @@ const DashboardPage = () => {
                 <th>Full Name</th>
                 <th>Email</th>
                 <th>Phone</th>
-                <th>Appointment Date</th>
+                <th> Date</th>
                 <th>Message</th>
               </tr>
             </thead>

@@ -57,7 +57,7 @@ function BookanAppointment() {
 
     // Check if appointment date is provided
     if (!formData.appointmentDate) {
-      errors.appointmentDate = 'Preferred Appointment Date is required';
+      errors.appointmentDate = ' Date is required';
       isValid = false;
     }
 
@@ -99,7 +99,7 @@ function BookanAppointment() {
         }, 5000); // Hide after 5 seconds (2 seconds for loader + 3 seconds for message visibility)
       }
     } catch (error) {
-      setError('There was an issue submitting your appointment. Please try again.');
+      setError('There was an issue submitting your application. Please try again.');
     } finally {
       setTimeout(() => {
         setIsLoading(false); // Hide loader after submission is complete
@@ -120,15 +120,14 @@ function BookanAppointment() {
           </div>
         </div>
       </section>
-      <h3 style={{textAlign:'center',color:'#0e7bbd',fontSize:'15px',fontWeight:'bolder',fontFamily:'unset'}}>GaloreTx Pharmaceuticals</h3>
-
+ 
       <div className="book-appointment">
-      <p style={{fontSize:'20px',textAlign:'center'}}>if you are interested write to us</p>
+      <p style={{fontSize:'20px',textAlign:'center'}}>Have questions or want to apply for a job?</p>
 
-        <h2>Book an Appointment</h2>
+        <p style={{fontSize:'20px',textAlign:'center'}}>Drop us a message, and we’ll get back to you!</p>
 
         {/* Show success message if form is submitted */}
-        {isSubmitted && <p className="appointment_sucess">Your appointment has been successfully booked!</p>}
+        {isSubmitted && <p className="appointment_sucess">Your Message has been successfully Sent</p>}
 
         {/* Show error message if there is any error */}
         {error && <p className="error">{error}</p>}
@@ -180,7 +179,7 @@ function BookanAppointment() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="appointmentDate">Preferred Appointment Date</label>
+            <label htmlFor="appointmentDate"> Date</label>
             <input
               type="date"
               id="appointmentDate"
@@ -193,7 +192,7 @@ function BookanAppointment() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="message">Additional Message</label>
+            <label htmlFor="message"> Message</label>
             <textarea
               id="message"
               name="message"
@@ -204,7 +203,7 @@ function BookanAppointment() {
           </div>
 
           <button type="submit" className="submit-button">
-            Book Appointment
+           Submit
           </button>
         </form>
       </div>

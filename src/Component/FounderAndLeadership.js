@@ -21,8 +21,7 @@ function FounderAndLeadership() {
           </div>
         </div>
       </section>
-      <h3 style={{textAlign:'center',color:'#0e7bbd',fontSize:'15px',fontWeight:'bolder',fontFamily:'unset'}}>GaloreTx Pharmaceuticals</h3>
-
+ 
       <section className="row breadcrumbRow">
         <div className="container">
           <div className="row inner m0">
@@ -42,12 +41,23 @@ function FounderAndLeadership() {
           </div>
           <div className="row dorctors_row">
             <div className="col-sm-6 col-md-4 team_member">
-              <div className="row m0 inner">
+              <div className="row m0 inner" 
+                style={{
+                  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+                  padding: "20px",
+                  borderRadius: "8px",
+                  transition: "transform 0.3s",
+                  backgroundColor: "#ffffff",
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+              onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
+              >
                 <Link to="#">
                   <div className="row m0 image">
                     <img
                       src={Sasi}
                       alt=""
+                      style={{borderRadius:'100%'}}
                       className="img-responsive"
                     />
                   </div>
@@ -69,11 +79,7 @@ function FounderAndLeadership() {
                       <i className="fa fa-twitter" />
                     </Link>
                   </li>
-                  <li>
-                    <Link to="#">
-                      <i className="fa fa-google-plus" />
-                    </Link>
-                  </li>
+                  
                   <li>
                     <Link to="#">
                       <i className="fa fa-linkedin" />
@@ -84,12 +90,23 @@ function FounderAndLeadership() {
               </div>
             </div>
             <div className="col-sm-6 col-md-4 team_member">
-              <div className="row m0 inner">
+              <div className="row m0 inner"  
+                 style={{
+                  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+                  padding: "20px",
+                  borderRadius: "8px",
+                  transition: "transform 0.3s",
+                  backgroundColor: "#ffffff",
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+              onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
+              >
                 <Link to="#">
                   <div className="row m0 image">
                     <img
                       src={Chenna}
                       alt=""
+                      style={{borderRadius:'100%'}}
                       className="img-responsive"
                     />
                   </div>
@@ -111,11 +128,7 @@ function FounderAndLeadership() {
                       <i className="fa fa-twitter" />
                     </Link>
                   </li>
-                  <li>
-                    <Link to="#">
-                      <i className="fa fa-google-plus" />
-                    </Link>
-                  </li>
+                  
                   <li>
                     <Link to="#">
                       <i className="fa fa-linkedin" />
@@ -126,7 +139,17 @@ function FounderAndLeadership() {
             </div>
 
             <div className="col-sm-6 col-md-4 team_member">
-              <div className="row m0 inner">
+              <div className="row m0 inner"
+                 style={{
+                  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+                  padding: "20px",
+                  borderRadius: "8px",
+                  transition: "transform 0.3s",
+                  backgroundColor: "#ffffff",
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+              onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
+              >
                 <Link to="#">
                   <div className="row m0 image">
                     <img
@@ -154,11 +177,7 @@ function FounderAndLeadership() {
                       <i className="fa fa-twitter" />
                     </Link>
                   </li>
-                  <li>
-                    <Link to="#">
-                      <i className="fa fa-google-plus" />
-                    </Link>
-                  </li>
+                 
                   <li>
                     <Link to="#">
                       <i className="fa fa-linkedin" />

@@ -17,12 +17,12 @@ function Home() {
                 <div className="container">
                     <div className="row">
                         {/* Who We Are Content */}
-                        <div className="col-sm-12 col-md-8 who_weR" style={{ width: '100%' }} >
-                            <div className="row m0 titleRow text-left">
-                                <h5 style={{ fontSize: '22px', fontWeight: 'bold', color: '#0072a0' }}>Who We Are</h5>
+                        <div className="col-sm-12 col-md-8 who_weR" style={{ width: '100%', padding:" 22px 15px 20px "}} >
+                            <div className="row m0 titleRow text-left" style={{ marginBottom: '10px' }}>
+                                {/* <h5 style={{ fontSize: '22px', fontWeight: 'bold', color: '#0072a0' }}>Who We Are</h5> */}
                                 <h2 style={{ fontSize: '38px', fontWeight: '700', color: '#333' }}>About  <span style={{ textTransform: 'none', }}> GaloreTx®</span></h2>
                             </div>
-                            <div className="media">
+                            <div className="media" style={{paddingTop:'10px'}}>
                                 <div className="media-left">
                                     <span>
                                         <img
@@ -43,12 +43,12 @@ function Home() {
                                             fontWeight: 'bold',
                                             color: '#fff',
                                             backgroundColor: '#0072a0',
-                                            padding: '10px 20px',
+                                            padding: '2px 20px',
                                             borderRadius: '5px',
                                             textDecoration: 'none'
                                         }}
                                     >
-                                        Book Appointment
+                                        Contact Us
                                     </Link>
                                 </div>
                             </div>
@@ -205,19 +205,31 @@ function Home() {
 </section>*/}
 
 
-            <section className="row team_section_type2 bgf">
+            <section className="row team_section_type2 bgf" style={{ padding: '10px 0' }}>
                 <div className="container">
-                    <div className="row m0 titleRow text-left">
+                    <div className="row m0 titleRow text-left" style={{ marginBottom: '0px' }}>
                         <h2>Founders</h2>
                     </div>
                     <div className="row dorctors_row">
-                        <div className="col-sm-6 col-md-4 team_member">
-                            <div className="row m0 inner">
+                        <div className="col-sm-6 col-md-4 team_member" >
+                            <div className="row m0 inner" 
+                            style={{
+                                boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+                                padding: "20px",
+                                borderRadius: "8px",
+                                transition: "transform 0.3s",
+                                backgroundColor: "#ffffff",
+                            }}
+                            onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+                            onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
+                     
+                            >
                                 <Link to="#">
                                     <div className="row m0 image">
                                         <img
                                             src={Sasi}
                                             alt=""
+                                            style={{borderRadius:'100%'}}
                                             className="img-responsive"
                                         />
                                     </div>
@@ -239,11 +251,7 @@ function Home() {
                                             <i className="fa fa-twitter" />
                                         </Link>
                                     </li>
-                                    <li>
-                                        <Link to="#">
-                                            <i className="fa fa-google-plus" />
-                                        </Link>
-                                    </li>
+                                   
                                     <li>
                                         <Link to="#">
                                             <i className="fa fa-linkedin" />
@@ -253,7 +261,18 @@ function Home() {
                             </div>
                         </div>
                         <div className="col-sm-6 col-md-4 team_member">
-                            <div className="row m0 inner">
+                            <div className="row m0 inner" 
+                              style={{
+                                boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+                                padding: "20px",
+                                borderRadius: "8px",
+                                transition: "transform 0.3s",
+                                backgroundColor: "#ffffff",
+                            }}
+                            onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+                            onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
+     
+                            >
                                 <Link to="#">
                                     <div className="row m0 image">
                                         <img
@@ -280,11 +299,7 @@ function Home() {
                                             <i className="fa fa-twitter" />
                                         </Link>
                                     </li>
-                                    <li>
-                                        <Link to="#">
-                                            <i className="fa fa-google-plus" />
-                                        </Link>
-                                    </li>
+                                   
                                     <li>
                                         <Link to="#">
                                             <i className="fa fa-linkedin" />
@@ -295,14 +310,25 @@ function Home() {
                         </div>
 
                         <div className="col-sm-6 col-md-4 team_member">
-                            <div className="row m0 inner">
+                            <div className="row m0 inner" 
+                               style={{
+                                boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+                                padding: "20px",
+                                borderRadius: "8px",
+                                transition: "transform 0.3s",
+                                backgroundColor: "#ffffff",
+                            }}
+                            onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+                            onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
+     
+                            >
                                 <Link to="#">
                                     <div className="row m0 image">
                                         <img
                                             src={Raghu}
                                             alt=""
                                             className="img-responsive"
-                                            style={{ width: '400px' }}
+                                            style={{ width: '400px',borderRadius:'100%' }}
                                         />
                                     </div>
                                     <div className="row m0 title_row">
@@ -323,11 +349,7 @@ function Home() {
                                             <i className="fa fa-twitter" />
                                         </Link>
                                     </li>
-                                    <li>
-                                        <Link to="#">
-                                            <i className="fa fa-google-plus" />
-                                        </Link>
-                                    </li>
+                                  
                                     <li>
                                         <Link to="#">
                                             <i className="fa fa-linkedin" />
@@ -339,7 +361,7 @@ function Home() {
                     </div>
                 </div>
             </section>
-            <div className="row team_section">
+            <div className="row team_section" style={{marginTop:'1px',paddingTop:'20px'}}>
                 <div className="container">
                     <div className="row m0 titleRow text-center">
                         <h5>Meet Our Team</h5>
@@ -373,7 +395,7 @@ function Home() {
                 </div>
             </div>
 
-            <section className="row recent_post_home2">
+            {/* <section className="row recent_post_home2">
                 <div className="container">
                     <div className="row titleRow">
                         <h5>What People Say</h5>
@@ -431,7 +453,7 @@ function Home() {
                     </div>
 
                 </div>
-            </section>
+            </section> */}
             <Footer />
         </div>
     )

@@ -20,7 +20,6 @@ function About() {
           </div>
         </div>
       </section>
-      <h3 style={{textAlign:'center',color:'#0e7bbd',fontSize:'15px',fontWeight:'bolder',fontFamily:'unset'}}>GaloreTx Pharmaceuticals</h3>
 
 
       {/* Breadcrumb Section */}
@@ -44,17 +43,12 @@ function About() {
               <div className="row m0 titleRow text-left">
                 {/* <h5 style={{ fontSize: '22px', fontWeight: 'bold', color: '#0072a0' }}>Who We Are</h5> */}
                 <h2 style={{ fontSize: '31px', fontWeight: '700', color: '#333',textTransform: 'none', }}>
-                  Peptide chemistry is at the heart of
+                  Peptide chemistry is at the heart of 
                   <span style={{
                     textTransform: 'none',
-                    marginLeft:'5px',
-                    color: '#0e7bbd', 
-                    fontWeight: 'bold',
-                    backgroundColor: '#f2f4f9',
-                    padding: '2px 5px',
-                    borderRadius: '4px'
+                    marginLeft:'10px'
                   }}>
-                    GaloreTx®
+                     Galore Tx®
                   </span>.
                 </h2>
               </div>
@@ -91,7 +85,7 @@ function About() {
                       textDecoration: 'none'
                     }}
                   >
-                    Book Appointment
+                    Contact Us
                   </Link>
                 </div>
               </div>

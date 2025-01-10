@@ -2118,10 +2118,12 @@ footer .footer_bottom .copyright a {
 /*----------------------------------------------------------------*/
 .page_intro.row {
   height: 214px;
-  background: #0186d5;
+  background: #145096;
   color: #fff;
+  /* filter: blur(1px);  */
   text-align: center;
   text-transform: uppercase;
+  z-index: -1;
   margin-bottom: 30px;
 }
 .page_intro.row .inner {
@@ -2129,7 +2131,7 @@ footer .footer_bottom .copyright a {
   height: 100%;
 }
 .page_intro.row .inner:before {
-  background: url(../../images/pages/page_intro.jpg) no-repeat scroll center 0;
+  background: url(../../images/pages/galotic.webp) no-repeat scroll center 0;
   -webkit-background-size: cover;
   background-size: cover;
   height: 100%;
@@ -2154,6 +2156,7 @@ footer .footer_bottom .copyright a {
   background: url(../../images/pages/galoticlogowithouttext.png) no-repeat scroll center center white;
   border-radius: 100%;
   background-position: center;
+  
   background-size:contain;
   position: absolute;
   bottom: -30px;
@@ -2170,6 +2173,7 @@ footer .footer_bottom .copyright a {
   font-family: 'Lato', sans-serif;
   font-weight: bold;
   font-size: 27px;
+  text-transform: none;
   margin: 0;
   line-height: 36px;
 }

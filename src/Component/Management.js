@@ -19,8 +19,7 @@ function Management() {
           </div>
         </div>
       </section>
-      <h3 style={{textAlign:'center',color:'#0e7bbd',fontSize:'15px',fontWeight:'bolder',fontFamily:'unset'}}>GaloreTx Pharmaceuticals</h3>
-
+ 
       <section className="row breadcrumbRow">
         <div className="container">
           <div className="row inner m0">
@@ -40,10 +39,20 @@ function Management() {
           </div>
           <div className="row dorctors_row">
             <div className="col-sm-6 col-md-6 team_member">
-              <div className="row m0 inner">
+              <div className="row m0 inner" 
+               style={{
+                boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+                padding: "20px",
+                borderRadius: "8px",
+                transition: "transform 0.3s",
+                backgroundColor: "#ffffff",
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+            onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
+              >
                 <Link to="#">
-                  <div className="row m0 image">
-                    <img src={Sasi} alt="" className="img-responsive" />
+                  <div className="row m0 image" style={{display:'flex',justifyContent:'center'}}>
+                    <img src={Sasi} alt="" className="img-responsive" style={{borderRadius:'100%'}} />
                   </div>
                   <div className="row m0 title_row">
                     <h5>Pottayil G Sasikumar, Ph.D</h5>
@@ -64,11 +73,7 @@ function Management() {
                       <i className="fa fa-twitter" />
                     </Link>
                   </li>
-                  <li>
-                    <Link to="#">
-                      <i className="fa fa-google-plus" />
-                    </Link>
-                  </li>
+                  
                   <li>
                     <Link to="#">
                       <i className="fa fa-linkedin" />
@@ -78,9 +83,19 @@ function Management() {
               </div>
             </div>
             <div className="col-sm-6 col-md-6 team_member">
-              <div className="row m0 inner">
+              <div className="row m0 inner"
+              style={{
+                boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+                padding: "20px",
+                borderRadius: "8px",
+                transition: "transform 0.3s",
+                backgroundColor: "#ffffff",
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+            onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
+              >
                 <Link to="#">
-                  <div className="row m0 image">
+                  <div className="row m0 image" style={{display:'flex',justifyContent:'center'}}>
                     <img src={Chenna} alt="" className="img-responsive" />
                   </div>
                   <div className="row m0 title_row">
@@ -102,11 +117,7 @@ function Management() {
                       <i className="fa fa-twitter" />
                     </Link>
                   </li>
-                  <li>
-                    <Link to="#">
-                      <i className="fa fa-google-plus" />
-                    </Link>
-                  </li>
+                 
                   <li>
                     <Link to="#">
                       <i className="fa fa-linkedin" />
