@@ -157,9 +157,9 @@ const Header = () => {
                 <Link style={styles.navLink} to="/BookanAppointment"> <i className="fa fa-calendar" style={{ marginRight: '2px' }} /> Career@GaloreTx</Link>
               </li>
               
-              <li>
+              {/* <li>
                 <Link style={styles.navLink} to="/Login"> <i className="fa fa-sign-in" style={{ marginRight: '2px' }} />Login</Link>
-              </li>
+              </li> */}
               
             </ul>
           </div>
