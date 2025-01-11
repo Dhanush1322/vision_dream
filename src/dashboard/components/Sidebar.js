@@ -39,14 +39,14 @@ const Sidebar = ({ isOpen }) => {
             <FaImage className="icon" /> Update Banner
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/AddProduct">
             <FaProductHunt className="icon" /> Add Product
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/Appointment">
-            <FaCalendarAlt className="icon" /> Appointment
+            <FaCalendarAlt className="icon" /> Inquiries
           </Link>
         </li>
         <li onClick={handleLogout} className="logout-option">

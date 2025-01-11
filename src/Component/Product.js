@@ -25,45 +25,47 @@ function Product() {
           </div>
         </div>
       </section>
-      <h3 style={{textAlign:'center',color:'#0e7bbd',fontSize:'15px',fontWeight:'bolder',fontFamily:'unset'}}>GaloreTx Pharmaceuticals</h3>
+ 
+      <div className="product-container" style={{width:'100%'}}>
 
-      <div className="product-container">
-
-        <h2 className="scaleuptext">
+        <h2 className="scaleuptext"  
+        style={{
+          marginBottom: '20px',
+          width: '100%',  // Adjust width for better responsiveness
+          marginInline: 'auto',
+          textAlign: 'left',
+          padding: '20px',  // Increased padding for more space around the text
+          borderRadius: '15px',  // Rounded corners for a smoother appearance
+          backgroundColor: '#f4f7f9',  // Light background for better readability
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',  // Soft shadow for a floating effect
+          // fontSize: '16px',  // Slightly larger text for readability
+          lineHeight: '1.6',  // Improved line spacing
+          // color: '#333',  // Darker text color for better contrast
+          fontFamily: 'Arial, sans-serif',  // Clean font style
+          borderLeft: '5px solid #145096'  // Highlighted left border
+        }}
+        >
           Process development and validation for Kilogram scale synthesis
         </h2>
         <div className="process-content">
-          <ul>
-            <li>Shortlisted unnatural amino acids</li>
-            <li>Peptide building blocks</li>
-            <li>Linkers</li>
-            <li>Peptide fragments by avoiding preparative HPLC purification</li>
+          <ul 
+          style={{
+            listStyleType: 'disc',
+            paddingLeft: '20px',
+            margin: '0',
+            fontSize: '18px',
+            lineHeight: '1.8',
+            color: '#555',
+            fontFamily: 'Arial, sans-serif',
+          }}
+          >
+            <li style={{ marginBottom: '10px' }}>Shortlisted unnatural amino acids</li>
+            <li style={{ marginBottom: '10px' }}>Peptide building blocks</li>
+            <li style={{ marginBottom: '10px' }}>Linkers</li>
+            <li >Peptide fragments by avoiding preparative HPLC purification</li>
           </ul>
         </div>
-        {/* <h2 className="scaleuptext">
-          Process optimization and kilogram scale manufacturing
-        </h2>
-        <p className="blackfont">Route optimization and scale up of Acyl amino acids</p>
-        <div className="process-content">
-          <ul>
-            <li>Shortlisted unnatural amino acids</li>
-            <li>Peptide building blocks</li>
-
-          </ul>
-        </div>
-        <img src={scalupimage} alt="" className="scalupimage" />
-
-        <p className="blackfont">Route optimization and manufacturing of dipeptide using acyl amino acids</p>
-        <div className="process-content">
-          <ul>
-            <li>In-house process developed and optimized for the synthesis of dipeptides</li>
-
-          </ul>
-        </div>
-        <img src={galoticscupimage} alt="" className="scalupimage" />
-        <h2 className="scaleuptext" style={{fontSize:'22px'}}>
-          Preparative HPLC was avoided and compound was purified by crystallization/precipitation techniquesDelivered 2 Kg of dipeptide using in-house developed process
-        </h2> */}
+       
         <div className="case-study-link">
          
           <Link to="/case-study" className="case-study-btn">View More</Link>

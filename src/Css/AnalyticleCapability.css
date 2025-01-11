@@ -7,6 +7,12 @@
     max-width: 1200px;
     margin: 0 auto;
   }
+
+  .analytical{
+    font-size: 18px;
+    font-weight: 400;
+    font-family: sans-serif;
+  }
   
   .left-content {
     flex: 1; /* Takes up equal space */

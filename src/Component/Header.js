@@ -28,7 +28,8 @@ const Header = () => {
   return (
     <>
       {/* Top Bar Section */}
-      <section className="row top_bar">
+     
+      {/* <section className="row top_bar">
         <div className="container">
           <div className="row m0">
             <div className="fleft schedule">
@@ -49,15 +50,15 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Navigation Bar Section */}
-      <nav className="navbar navbar-default navbar-static-top navbar2" style={{ height: '90px' }}>
-        <div className="container">
-          <div className="navbar-header">
+      <nav className="navbar navbar-default navbar-static-top navbar2" style={{ height: '90px',backgroundColor:'white' }}>
+        <div className="container" style={{ width: '98%',backgroundColor:'white',height:'90px' }}>
+          <div className="navbar-header" style={{ backgroundColor: 'white' }}>
             {/* Logo */}
             <Link to="/" className="navbar-brand">
-              <img src="logo/logo.png" alt="Logo" style={{ width: '85px',background: 'transparent' }} />
+              <img src="logo/logo.png" alt="Logo" style={{ width: '230px',background: 'transparent' }} />
             </Link>
 
             {/* Mobile Toggle Button */}
@@ -75,6 +76,7 @@ const Header = () => {
 
           {/* Navigation Menu */}
           <div
+          style={{backgroundColor:'white'}}
             className={`collapse navbar-collapse ${isNavCollapsed ? '' : 'in'}`}
             id="main_nav"
           >
@@ -163,6 +165,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
+      
     </>
   );
 };

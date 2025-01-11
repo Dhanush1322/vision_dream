@@ -34,10 +34,31 @@
     font-weight: 700;
     font-family: sans-serif;
   }
+  .content-wrapper-gelotics{
+    display: flex;
+  }
+  .content-wrapper-list{
+    width: 50%;
+  }
+  .content-wrapper-gelotics ul{
+    width: 50%;
+  }
+  .content-wrapper-gelotics ul li{
+    font-size: 15px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
   /* Mobile View */
   @media (max-width: 768px) {
     .responsive-image {
       width: 100%; /* Full width on smaller screens */
       margin: 0;   /* Remove margins */
+    }
+    .content-wrapper-gelotics{
+      display: flex;
+      flex-direction: column;
+    }
+    .content-wrapper-gelotics ul{
+      width: 100%;
     }
   }

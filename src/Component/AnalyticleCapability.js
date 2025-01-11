@@ -18,31 +18,72 @@ function AnalyticleCapability() {
           </div>
         </div>
       </section>
-      <h3 style={{textAlign:'center',color:'#0e7bbd',fontSize:'15px',fontWeight:'bolder',fontFamily:'unset'}}>GaloreTx Pharmaceuticals</h3>
-
+ 
 
       {/* Content Section */}
       <div className="synthetic-chemical-container">
         {/* Left Content Section */}
         <div className="left-content">
-          <h2>Instrumentation</h2>
+          <h2
+          style={{
+            marginBottom: '20px',
+            width: '90%',  
+            textAlign: 'left',
+            padding: '15px',  
+            borderRadius: '15px', 
+            backgroundColor: '#f4f7f9',  
+            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',  
+            fontSize: '30px', 
+            lineHeight: '1.6',  
+            fontFamily: 'Arial, sans-serif', 
+            borderLeft: '5px solid #145096' 
+          }}
+          >Instrumentation</h2>
           <ul>
-            <li>Analytical HPLCs</li>
-            <li>Preparative HPLCs</li>
-            <li>Mass Spectrometer</li>
+            <li className="analytical">Analytical HPLCs</li>
+            <li className="analytical">Preparative HPLCs</li>
+            <li className="analytical">Mass Spectrometer</li>
           </ul>
 
-          <h2>Analytical R&D</h2>
+          <h2
+          style={{
+            marginBottom: '20px',
+            width: '90%',  
+            textAlign: 'left',
+            padding: '15px',  
+            borderRadius: '15px', 
+            backgroundColor: '#f4f7f9',  
+            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',  
+            fontSize: '30px', 
+            lineHeight: '1.6',  
+            fontFamily: 'Arial, sans-serif', 
+            borderLeft: '5px solid #145096' 
+          }}
+          >Analytical R&D</h2>
           <ul>
-            <li>Analytical HPLC method development</li>
-            <li>Impurity analysis</li>
+            <li className="analytical">Analytical HPLC method development</li>
+            <li className="analytical">Impurity analysis</li>
             
             
           </ul>
-          <h2>Preparative scale HPLC purification</h2>
+          <h2 
+          style={{
+            marginBottom: '20px',
+            width: '90%',  
+            textAlign: 'left',
+            padding: '15px',  
+            borderRadius: '15px', 
+            backgroundColor: '#f4f7f9',  
+            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',  
+            fontSize: '30px', 
+            lineHeight: '1.6',  
+            fontFamily: 'Arial, sans-serif', 
+            borderLeft: '5px solid #145096' 
+          }}
+          >Preparative scale HPLC purification</h2>
           <ul>
-          <li>10 mm to 50 mm HPLC column</li>
-          <li>Capability to carry out gram-scale purification</li>
+          <li className="analytical">10 mm to 50 mm HPLC column</li>
+          <li className="analytical">Capability to carry out gram-scale purification</li>
           </ul>
         </div>
 

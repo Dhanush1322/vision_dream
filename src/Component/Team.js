@@ -24,8 +24,7 @@ function Team() {
           </div>
         </div>
       </section>
-      <h3 style={{textAlign:'center',color:'#0e7bbd',fontSize:'15px',fontWeight:'bolder',fontFamily:'unset'}}>GaloreTx Pharmaceuticals</h3>
-
+ 
       <section className="row breadcrumbRow">
         <div className="container">
           <div className="row inner m0">
