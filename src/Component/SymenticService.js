@@ -173,16 +173,14 @@ function SymenticService() {
           <ul style={{padding:'0px'}}>
             <li
               style={{
-                fontSize: '20px', // Increased font size for better readability
-                fontWeight: '600',  // Slightly bold font weight
-                fontFamily: 'Roboto, sans-serif', // Applying a modern sans-serif font
+                fontSize: '20px',
+                fontWeight: '600',  
+                fontFamily: 'Roboto, sans-serif',
                 padding: '15px 25px',
                 margin: '10px',
                 borderRadius: '8px',
                 backgroundColor: 'white',
                 color: '#333',
-
-                 
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
                 cursor: 'pointer',
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
@@ -192,16 +190,14 @@ function SymenticService() {
 
             >Branched peptides</li>
             <li style={{
-              fontSize: '20px', // Increased font size for better readability
-              fontWeight: '600',  // Slightly bold font weight
-              fontFamily: 'Roboto, sans-serif', // Applying a modern sans-serif font
+              fontSize: '20px', 
+              fontWeight: '600',  
+              fontFamily: 'Roboto, sans-serif',
               padding: '15px 25px',
               margin: '10px',
               borderRadius: '8px',
               backgroundColor: 'white',
-              color: '#333',
-
-               
+              color: '#333',               
               boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
               cursor: 'pointer',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
@@ -211,16 +207,14 @@ function SymenticService() {
             >Conformationally constrained cyclic peptides</li>
             <li
               style={{
-                fontSize: '20px', // Increased font size for better readability
-                fontWeight: '600',  // Slightly bold font weight
-                fontFamily: 'Roboto, sans-serif', // Applying a modern sans-serif font
+                fontSize: '20px',
+                fontWeight: '600',  
+                fontFamily: 'Roboto, sans-serif',
                 padding: '15px 25px',
                 margin: '10px',
                 borderRadius: '8px',
                 backgroundColor: 'white',
                 color: '#333',
-
-                 
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
                 cursor: 'pointer',
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
@@ -231,16 +225,14 @@ function SymenticService() {
             >Cysteine rich peptides: Toxins</li>
             <li
               style={{
-                fontSize: '20px', // Increased font size for better readability
-                fontWeight: '600',  // Slightly bold font weight
-                fontFamily: 'Roboto, sans-serif', // Applying a modern sans-serif font
+                fontSize: '20px', 
+                fontWeight: '600',  
+                fontFamily: 'Roboto, sans-serif',
                 padding: '15px 25px',
                 margin: '10px',
                 borderRadius: '8px',
                 backgroundColor: 'white',
                 color: '#333',
-
-                 
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
                 cursor: 'pointer',
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
@@ -249,18 +241,15 @@ function SymenticService() {
               onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
 
             >Cyclic thioethers</li>
-            <li
-              style={{
-                fontSize: '20px', // Increased font size for better readability
-                fontWeight: '600',  // Slightly bold font weight
-                fontFamily: 'Roboto, sans-serif', // Applying a modern sans-serif font
+            <li style={{
+                fontSize: '20px', 
+                fontWeight: '600',  
+                fontFamily: 'Roboto, sans-serif',
                 padding: '15px 25px',
                 margin: '10px',
                 borderRadius: '8px',
                 backgroundColor: 'white',
                 color: '#333',
-
-                 
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
                 cursor: 'pointer',
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
@@ -271,23 +260,20 @@ function SymenticService() {
             >Peptide chain dimers</li>
             <li
               style={{
-                fontSize: '20px', // Increased font size for better readability
-                fontWeight: '600',  // Slightly bold font weight
-                fontFamily: 'Roboto, sans-serif', // Applying a modern sans-serif font
+                fontSize: '20px', 
+                fontWeight: '600', 
+                fontFamily: 'Roboto, sans-serif',
                 padding: '15px 25px',
                 margin: '10px',
                 borderRadius: '8px',
                 backgroundColor: 'white',
                 color: '#333',
-
-                 
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
                 cursor: 'pointer',
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               }}
               onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
               onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-
             >Cyclic peptides by click chemistry, stapling, and RCM</li>
 
           </ul>
