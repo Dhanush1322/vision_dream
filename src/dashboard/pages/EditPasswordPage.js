@@ -13,13 +13,7 @@ function EditPasswordPage() {  // Rename the parent component
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  useEffect(() => {
-    let token = localStorage.getItem('auth');
-    if (!token) {
-      navigate('/Login');
-    }
-  }, [navigate]);
-
+ 
   return (
     <div className="dashboard">
       <Sidebar isOpen={isSidebarOpen} />

@@ -24,6 +24,30 @@
   background-color: #34495e; /* Header background */
   border-bottom: 1px solid #1a242f; /* Subtle border */
 }
+/* Updated menu-header to align the icon to the right */
+.menu-header {
+  display: flex;
+  cursor: pointer;
+}
+
+/* Additional styling for the icon container */
+.toggle-icon-container {
+  display: flex;
+  align-items: center;
+}
+.menu-header-right-box{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.toggle-icon {
+  margin-left: 10px; /* Add some spacing between the text and icon */
+  font-size: 1.2em;
+  color: #fff; /* You can adjust the color of the icon */
+}
+
+/* Other styles for the menu items remain the same */
 
 .sidebar-header h2 {
   color: #f39c12; /* Gold text for branding */
@@ -40,7 +64,7 @@
 
 .sidebar-links li {
   padding: 15px 20px;
-  display: flex;
+  
   align-items: center;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -58,6 +82,12 @@
 .sidebar-links li:hover {
   background-color: #1a242f; /* Darker shade for hover effect */
   color: #00aaff; /* Accent color for hover */
+}
+.submenu{
+  padding-left: 0%;
+}
+.submenu-title {
+  list-style-type: none;
 }
 
 /* Icon styling inside list items */
