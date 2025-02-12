@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { FaTachometerAlt, FaKey, FaImage, FaProductHunt, FaCalendarAlt, FaSignOutAlt, FaChevronRight, FaChevronDown, FaChartLine } from 'react-icons/fa'; // Import icons
+import { FaTachometerAlt,  FaSignOutAlt, FaChevronRight, FaChevronDown, FaChartLine } from 'react-icons/fa'; // Import icons
 import './Sidebar.css'; // Import CSS for styling
 import Logo from '../../img/logo (1).png';
 
@@ -11,7 +11,8 @@ const Sidebar = ({ isOpen }) => {
   const [isTeamReportOpen, setIsTeamReportOpen] = useState(false); // Toggle state for Team Report submenu
   const [isFundManagementOpen, setIsFundManagementOpen] = useState(false); // Toggle state for Fund Management submenu
   const [isWithdrawalMenuOpen, setIsWithdrawalMenuOpen] = useState(false); // Toggle state for Withdrawal submenu
-
+  const [isAdministrationMenuOpen, setIsAdministrationMenuOpen] = useState(false); // Toggle state for Administration submenu
+  const [isHelpAndSupportOpen, setIsHelpAndSupportOpen] = useState(false); // Toggle state for HelpAndSupport submenu
   const handleLogout = () => {
     localStorage.removeItem('auth'); // Remove the token from localStorage
     navigate('/Login'); // Redirect to login page
@@ -56,13 +57,13 @@ const Sidebar = ({ isOpen }) => {
           {isUserManagementOpen && (
             <ul className="submenu">
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />User Profile Access</Link>
+                <Link to="/UserProfileAccess"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />User Profile Access</Link>
               </li>
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Block User</Link>
+                <Link to="/BlockUser"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Block User</Link>
               </li>
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />UnBlock User</Link>
+                <Link to="/UnblockUser"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />UnBlock User</Link>
               </li>
             </ul>
           )}
@@ -142,7 +143,75 @@ const Sidebar = ({ isOpen }) => {
             </ul>
           )}
         </li>
-
+        <li className="menu-item">
+          <div className="menu-header" onClick={() => setIsAdministrationMenuOpen(!isAdministrationMenuOpen)}>
+            <FaTachometerAlt className="icon" />
+            <div className='menu-header-right-box'>
+              Administration
+              {isAdministrationMenuOpen ? <FaChevronDown className="toggle-icon" /> : <FaChevronRight className="toggle-icon" />}
+            </div>
+          </div>
+          {isAdministrationMenuOpen && (
+            <ul className="submenu">
+              <li className='submenu-title'>
+                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Notice Update </Link>
+              </li>
+              <li className='submenu-title'>
+                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Outstanding Balance</Link>
+              </li>
+              <li className='submenu-title'>
+                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Upload Qr Code</Link>
+              </li>
+              <li className='submenu-title'>
+                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Balance Add /Deduct</Link>
+              </li>
+              <li className='submenu-title'>
+                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Banlance History</Link>
+              </li>
+              <li className='submenu-title'>
+                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Fund Add Deduct </Link>
+              </li>
+              <li className='submenu-title'>
+                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Fund History</Link>
+              </li>
+              <li className='submenu-title'>
+                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Slider Image Upload</Link>
+              </li>
+              <li className='submenu-title'>
+                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Withdrawal On /Off</Link>
+              </li>
+              <li className='submenu-title'>
+                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Upload Qr Code</Link>
+              </li>
+            </ul>
+          )}
+        </li>
+        {/* User Management Section with Toggle Submenu */}
+        <li className="menu-item">
+          <div className="menu-header" onClick={() => setIsHelpAndSupportOpen(!isHelpAndSupportOpen)}>
+            <FaTachometerAlt className="icon" />
+            <div className='menu-header-right-box'>
+              Help And Support
+              {isHelpAndSupportOpen ? <FaChevronDown className="toggle-icon" /> : <FaChevronRight className="toggle-icon" />}
+            </div>
+          </div>
+          {isHelpAndSupportOpen && (
+            <ul className="submenu">
+              <li className='submenu-title'>
+                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Compose Message All</Link>
+              </li>
+              <li className='submenu-title'>
+                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Compose Message Single</Link>
+              </li>
+              <li className='submenu-title'>
+                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Inbox</Link>
+              </li>
+              <li className='submenu-title'>
+                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Outbox</Link>
+              </li>
+            </ul>
+          )}
+        </li>
         <li onClick={handleLogout} className="logout-option">
           <FaSignOutAlt className="icon" /> Logout
         </li>

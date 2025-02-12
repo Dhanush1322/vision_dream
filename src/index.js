@@ -1,7 +1,7 @@
 import React from 'react';  // Keep only one import of React
 import ReactDOM from 'react-dom/client';
 
-
+import './globals.css';
 import App from './App';  // Updated path to App.js
 
 
