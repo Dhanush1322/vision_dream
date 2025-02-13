@@ -13,7 +13,7 @@ function Login() {
     return (
         <Container maxWidth="xs">
             <Paper elevation={3} sx={{ padding: 4, textAlign: "center", marginTop: 20 }}>
-                <img src={Logo} width="100px"/>
+               <center> <img src={Logo} width="100px"/></center>
                 <Typography variant="h5" gutterBottom fontWeight="bold">
                    Admin Login
                 </Typography>

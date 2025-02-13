@@ -67,7 +67,7 @@ function UnblockUser() {
       <div className="dashboard-content">
         <Navbar toggleSidebar={toggleSidebar} />
 
-        <div className="table-container">
+        <div className="unblock-table-container">
           <h3>Blocked Users</h3>
           <input
             type="text"

@@ -1,5 +1,5 @@
 
-  .unblock-table-container {
+.fund-table-container {
     margin-top: 80px;
     margin-left: 270px;
     padding: 20px;
@@ -57,7 +57,7 @@
   }
   
   @media (max-width: 768px) {
-    .form-container, .unblock-table-container {
+    .form-container, .fund-table-container {
       margin-left: 0;
       padding: 15px;
     }

@@ -81,13 +81,13 @@ const Sidebar = ({ isOpen }) => {
           {isTeamReportOpen && (
             <ul className="submenu">
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Active User</Link>
+                <Link to="/ActiveUser"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Active User</Link>
               </li>
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Inactive User</Link>
+                <Link to="/InactiveUser"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Inactive User</Link>
               </li>
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Total User</Link>
+                <Link to="/TotalUser"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Total User</Link>
               </li>
             </ul>
           )}
@@ -105,16 +105,16 @@ const Sidebar = ({ isOpen }) => {
           {isFundManagementOpen && (
             <ul className="submenu">
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Pending Fund Request</Link>
+                <Link to="/PendingFundRequest"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Pending Fund Request</Link>
               </li>
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Approved Fund Request</Link>
+                <Link to="/ApprovedFundRequest"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Approved Fund Request</Link>
               </li>
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Rejected Fund Request</Link>
+                <Link to="/RejectedFundRequest"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Rejected Fund Request</Link>
               </li>
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Fund Convert Report</Link>
+                <Link to="/FundConvertReport"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Fund Convert Report</Link>
               </li>
             </ul>
           )}
@@ -132,13 +132,13 @@ const Sidebar = ({ isOpen }) => {
           {isWithdrawalMenuOpen && (
             <ul className="submenu">
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Pending Withdrawal</Link>
+                <Link to="/PendingWithdrawal"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Pending Withdrawal</Link>
               </li>
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Paid Withdrawal</Link>
+                <Link to="/PaidWithdrawal"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Paid Withdrawal</Link>
               </li>
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Rejected Withdrawal</Link>
+                <Link to="/RejectedWithdrawal"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Rejected Withdrawal</Link>
               </li>
             </ul>
           )}
@@ -154,35 +154,33 @@ const Sidebar = ({ isOpen }) => {
           {isAdministrationMenuOpen && (
             <ul className="submenu">
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Notice Update </Link>
+                <Link to="/NoticeUpdate"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Notice Update </Link>
               </li>
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Outstanding Balance</Link>
+                <Link to="/OutstandingBalance"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Outstanding Balance</Link>
               </li>
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Upload Qr Code</Link>
+                <Link to="/UploadQrCode"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Upload Qr Code</Link>
               </li>
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Balance Add /Deduct</Link>
+                <Link to="/BalanceAddDedut"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Balance Add /Deduct</Link>
               </li>
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Banlance History</Link>
+                <Link to="/BalanceHistory"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Banlance History</Link>
               </li>
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Fund Add Deduct </Link>
+                <Link to="/FundAddDedut"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Fund Add Deduct </Link>
               </li>
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Fund History</Link>
+                <Link to="/FundHistory"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Fund History</Link>
               </li>
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Slider Image Upload</Link>
+                <Link to="/SliderImageUpload"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Slider Image Upload</Link>
               </li>
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Withdrawal On /Off</Link>
+                <Link to="/WithdrawalOnOff"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Withdrawal On /Off</Link>
               </li>
-              <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Upload Qr Code</Link>
-              </li>
+              
             </ul>
           )}
         </li>
@@ -198,16 +196,16 @@ const Sidebar = ({ isOpen }) => {
           {isHelpAndSupportOpen && (
             <ul className="submenu">
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Compose Message All</Link>
+                <Link to="/ComposeMessageAll"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Compose Message All</Link>
               </li>
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Compose Message Single</Link>
+                <Link to="/ComposeMessageSingle"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Compose Message Single</Link>
               </li>
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Inbox</Link>
+                <Link to="/Inbox"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Inbox</Link>
               </li>
               <li className='submenu-title'>
-                <Link to="/"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Outbox</Link>
+                <Link to="/OutBox"><FaChartLine className="submenu-icon" style={{ marginRight: '10px' }} />Outbox</Link>
               </li>
             </ul>
           )}

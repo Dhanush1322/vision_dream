@@ -1,5 +1,5 @@
 /* Style for form container */
-.user-form-container {
+.form-container {
     margin-top: 60px;
     margin-left: 270px;
     padding: 20px;
@@ -62,7 +62,7 @@
   }
   /* Mobile responsive styles */
 @media (max-width: 768px) {
-    .user-form-container{
+    .form-container {
       margin-left:0px; /* Remove the large left margin on mobile */
       
     }

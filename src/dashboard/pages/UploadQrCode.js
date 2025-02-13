@@ -2,20 +2,28 @@ import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
 import { useNavigate } from 'react-router-dom';
-import '../css/UserProfileAccess.css';
-function UserProfileAccess() {
+import '../css/UploadQrCode.css';
+
+function UploadQrCode() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [userId, setUserId] = useState('');
+  const [qrImage, setQrImage] = useState(null);
+  const [upiId, setUpiId] = useState('');
   const navigate = useNavigate();
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    setQrImage(file);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle the form submission logic here
-    console.log('User ID:', userId);
+    console.log('QR Code Image:', qrImage);
+    console.log('UPI ID:', upiId);
   };
 
   return (
@@ -24,17 +32,28 @@ function UserProfileAccess() {
       <div className="dashboard-content">
         <Navbar toggleSidebar={toggleSidebar} />
 
-        <div className="user-form-container">
-          <h2>Enter Your User ID</h2>
+        <div className="form-container">
+          <h2>Upload QR Code</h2>
           <form onSubmit={handleSubmit} className="user-form">
             <div className="form-group">
-              <label htmlFor="userId">User ID</label>
+              <label htmlFor="qrCode">Upload QR Code</label>
+              <input
+                type="file"
+                id="qrCode"
+                accept="image/*"
+                onChange={handleImageUpload}
+                required
+                className="form-input"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="upiId">Enter UPI ID</label>
               <input
                 type="text"
-                id="userId"
-                value={userId}
-                onChange={(e) => setUserId(e.target.value)}
-                placeholder="Enter User ID"
+                id="upiId"
+                value={upiId}
+                onChange={(e) => setUpiId(e.target.value)}
+                placeholder="Enter UPI ID"
                 required
                 className="form-input"
               />
@@ -47,4 +66,4 @@ function UserProfileAccess() {
   );
 }
 
-export default UserProfileAccess;
+export default UploadQrCode;
