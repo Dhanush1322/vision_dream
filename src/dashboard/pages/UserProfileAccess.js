@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import '../css/UserProfileAccess.css';
+
 function UserProfileAccess() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [userId, setUserId] = useState('');
@@ -14,8 +16,24 @@ function UserProfileAccess() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle the form submission logic here
+    
+    if (!userId.trim()) {
+      Swal.fire({
+        title: 'Error!',
+        text: 'User ID cannot be empty.',
+        icon: 'error',
+        confirmButtonColor: '#d33',
+      });
+      return;
+    }
+
     console.log('User ID:', userId);
+    Swal.fire({
+      title: 'Success!',
+      text: 'User ID submitted successfully.',
+      icon: 'success',
+      confirmButtonColor: '#3085d6',
+    });
   };
 
   return (

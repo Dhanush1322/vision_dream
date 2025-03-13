@@ -1,63 +1,76 @@
 import React, { useState } from 'react';
-import axios from 'axios';  // Import axios for making HTTP requests
-import './EditPasswordForm.css'; // Include CSS for styling if needed
+import axios from 'axios';
+import Swal from 'sweetalert2'; // Import SweetAlert2
+import './EditPasswordForm.css';
 
 function EditPasswordForm() {
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmNewPassword, setConfirmNewPassword] = useState('');
-  const [error, setError] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');  // New state for success message
-  const [loading, setLoading] = useState(false);  // Loading state for the form submission
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Password validation logic
     if (newPassword !== confirmNewPassword) {
-      setError('New Password and Confirm New Password do not match.');
+      Swal.fire({
+        title: 'Error!',
+        text: 'New Password and Confirm New Password do not match.',
+        icon: 'error',
+        confirmButtonColor: '#d33',
+      });
       return;
     }
 
     if (newPassword.length < 8) {
-      setError('New Password must be at least 8 characters long.');
+      Swal.fire({
+        title: 'Error!',
+        text: 'New Password must be at least 8 characters long.',
+        icon: 'error',
+        confirmButtonColor: '#d33',
+      });
       return;
     }
 
-    // Reset error and proceed with form submission logic
-    setError('');
-    setSuccessMessage('');
-    setLoading(true);  // Set loading state to true when submitting
+    setLoading(true);
 
-    // Make API request to reset the password
     try {
       const response = await axios.post('https://host-rl4ol.ondigitalocean.app/reset-password', {
-        oldPassword,        // Changed to 'oldPassword'
-        newPassword,        // New password field
-        confirmNewPassword  // Confirm new password field
+        oldPassword,
+        newPassword,
+        confirmNewPassword,
       });
 
       if (response.status === 200) {
-        setSuccessMessage('Password updated successfully!');
+        Swal.fire({
+          title: 'Success!',
+          text: 'Password updated successfully!',
+          icon: 'success',
+          confirmButtonColor: '#3085d6',
+        });
         setOldPassword('');
         setNewPassword('');
         setConfirmNewPassword('');
       } else {
-        // Handle non-200 responses
-        setError(`Error: ${response.status} - ${response.statusText}`);
+        Swal.fire({
+          title: 'Error!',
+          text: `Error: ${response.status} - ${response.statusText}`,
+          icon: 'error',
+          confirmButtonColor: '#d33',
+        });
       }
     } catch (err) {
-      // Log the full error for debugging
-      console.error('Error details:', err.response || err); // Log the full error object
+      console.error('Error details:', err.response || err);
 
-      // If the error is related to response data or status, show appropriate message
-      if (err.response) {
-        setError(`Error: ${err.response.status} - ${err.response.data.message || 'Failed to update password. Please try again.'}`);
-      } else {
-        setError('Failed to update password. Please try again.');
-      }
+      Swal.fire({
+        title: 'Error!',
+        text: err.response?.data?.message || 'Failed to update password. Please try again.',
+        icon: 'error',
+        confirmButtonColor: '#d33',
+      });
     } finally {
-      setLoading(false);  // Set loading state back to false after request completion
+      setLoading(false);
     }
   };
 
@@ -65,9 +78,6 @@ function EditPasswordForm() {
     <div className="edit-password-container">
       <h2>Edit Password</h2>
       <form onSubmit={handleSubmit} className="edit-password-form">
-        {error && <p className="error-message">{error}</p>}
-        {successMessage && <p className="success-message">{successMessage}</p>} {/* Success message */}
-        
         <div className="form-group">
           <label htmlFor="oldPassword">Old Password</label>
           <input
@@ -79,7 +89,7 @@ function EditPasswordForm() {
             required
           />
         </div>
-        
+
         <div className="form-group">
           <label htmlFor="newPassword">New Password</label>
           <input
@@ -91,7 +101,7 @@ function EditPasswordForm() {
             required
           />
         </div>
-        
+
         <div className="form-group">
           <label htmlFor="confirmNewPassword">Confirm New Password</label>
           <input
@@ -103,7 +113,7 @@ function EditPasswordForm() {
             required
           />
         </div>
-        
+
         <button type="submit" className="submit-button" disabled={loading}>
           {loading ? 'Updating...' : 'Update Password'}
         </button>
