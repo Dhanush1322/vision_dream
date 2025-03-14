@@ -5,24 +5,30 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2"; // Import SweetAlert2
 
 function Login() {
-    const [userid, setUserid] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isLoading, setIsLoading] = useState(false); // Loader state
     const navigate = useNavigate();
 
-    const defaultUser = {
-        userid: "admin",
-        password: "123456",
-    };
-
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
         setIsLoading(true); // Show loader
 
-        setTimeout(() => {  // Simulate API delay
+        try {
+            const response = await fetch("http://localhost:5001/api/admin/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email, password }),
+            });
+
+            const data = await response.json();
+          
             setIsLoading(false); // Hide loader
 
-            if (userid === defaultUser.userid && password === defaultUser.password) {
+            if (response.ok) {
+                localStorage.setItem("token", data.token); // Store token
                 Swal.fire({
                     title: "Success!",
                     text: "Login Successful",
@@ -35,17 +41,27 @@ function Login() {
             } else {
                 Swal.fire({
                     title: "Error!",
-                    text: "Invalid User ID or Password",
+                    text: data.message || "Invalid Email ID or Password",
                     icon: "error",
                     confirmButtonColor: "#d33",
                     confirmButtonText: "Try Again",
                 });
             }
-        }, 2000);
+        } catch (error) {
+            setIsLoading(false);
+            Swal.fire({
+                title: "Error!",
+                text: "Something went wrong. Please try again later.",
+                icon: "error",
+                confirmButtonColor: "#d33",
+                confirmButtonText: "OK",
+            });
+        }
     };
 
     return (
         <Container maxWidth="xs">
+            
             <Paper elevation={3} sx={{ padding: 4, textAlign: "center", marginTop: 20 }}>
                 <center> <img src={Logo} width="100px" alt="Logo" /></center>
                 <Typography variant="h5" gutterBottom fontWeight="bold">
@@ -54,12 +70,12 @@ function Login() {
                 <Box component="form" noValidate autoComplete="off" onSubmit={handleLogin}>
                     <TextField
                         fullWidth
-                        label="User ID"
+                        label="Email ID"
                         variant="outlined"
                         margin="normal"
-                        type="text"
-                        value={userid}
-                        onChange={(e) => setUserid(e.target.value)}
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                     <TextField
                         fullWidth

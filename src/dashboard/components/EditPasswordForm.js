@@ -1,32 +1,32 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Swal from 'sweetalert2'; // Import SweetAlert2
+import Swal from 'sweetalert2';
 import './EditPasswordForm.css';
 
 function EditPasswordForm() {
-  const [oldPassword, setOldPassword] = useState('');
-  const [newPassword, setNewPassword] = useState('');
-  const [confirmNewPassword, setConfirmNewPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Password validation logic
-    if (newPassword !== confirmNewPassword) {
+    // Password validation
+    if (password !== confirmPassword) {
       Swal.fire({
         title: 'Error!',
-        text: 'New Password and Confirm New Password do not match.',
+        text: 'Passwords do not match!',
         icon: 'error',
         confirmButtonColor: '#d33',
       });
       return;
     }
 
-    if (newPassword.length < 8) {
+    if (password.length < 8) {
       Swal.fire({
         title: 'Error!',
-        text: 'New Password must be at least 8 characters long.',
+        text: 'Password must be at least 8 characters long!',
         icon: 'error',
         confirmButtonColor: '#d33',
       });
@@ -36,11 +36,19 @@ function EditPasswordForm() {
     setLoading(true);
 
     try {
-      const response = await axios.post('https://host-rl4ol.ondigitalocean.app/reset-password', {
-        oldPassword,
-        newPassword,
-        confirmNewPassword,
-      });
+      const token = localStorage.getItem("token"); // Retrieve token from local storage
+      const response = await axios.post(
+        'http://localhost:5001/api/admin/change-password',
+        {
+          email,
+          password,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, // Pass token in headers
+          },
+        }
+      );
 
       if (response.status === 200) {
         Swal.fire({
@@ -49,23 +57,17 @@ function EditPasswordForm() {
           icon: 'success',
           confirmButtonColor: '#3085d6',
         });
-        setOldPassword('');
-        setNewPassword('');
-        setConfirmNewPassword('');
-      } else {
-        Swal.fire({
-          title: 'Error!',
-          text: `Error: ${response.status} - ${response.statusText}`,
-          icon: 'error',
-          confirmButtonColor: '#d33',
-        });
+
+        // Clear fields
+        setEmail('');
+        setPassword('');
+        setConfirmPassword('');
       }
     } catch (err) {
-      console.error('Error details:', err.response || err);
-
+      console.error('Error:', err.response || err);
       Swal.fire({
         title: 'Error!',
-        text: err.response?.data?.message || 'Failed to update password. Please try again.',
+        text: err.response?.data?.message || 'Failed to update password!',
         icon: 'error',
         confirmButtonColor: '#d33',
       });
@@ -76,39 +78,39 @@ function EditPasswordForm() {
 
   return (
     <div className="edit-password-container">
-      <h2>Edit Password</h2>
+      <h2>Change Password</h2>
       <form onSubmit={handleSubmit} className="edit-password-form">
         <div className="form-group">
-          <label htmlFor="oldPassword">Old Password</label>
+          <label htmlFor="email">Email</label>
           <input
-            type="password"
-            id="oldPassword"
-            value={oldPassword}
-            onChange={(e) => setOldPassword(e.target.value)}
-            placeholder="Enter current password"
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email"
             required
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="newPassword">New Password</label>
+          <label htmlFor="password">New Password</label>
           <input
             type="password"
-            id="newPassword"
-            value={newPassword}
-            onChange={(e) => setNewPassword(e.target.value)}
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             placeholder="Enter new password"
             required
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="confirmNewPassword">Confirm New Password</label>
+          <label htmlFor="confirmPassword">Confirm New Password</label>
           <input
             type="password"
-            id="confirmNewPassword"
-            value={confirmNewPassword}
-            onChange={(e) => setConfirmNewPassword(e.target.value)}
+            id="confirmPassword"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             placeholder="Confirm new password"
             required
           />
