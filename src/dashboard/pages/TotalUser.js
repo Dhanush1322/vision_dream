@@ -2,128 +2,209 @@ import React, { useState, useEffect } from 'react';
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
 import '../css/TotalUser.css';
-
+import { Button } from "@mui/material";
+import Swal from "sweetalert2";
+import axios from "axios";
 function TotalUser() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
-    const [sortColumn, setSortColumn] = useState(null);
-    const [sortOrder, setSortOrder] = useState('asc');
     const [users, setUsers] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const usersPerPage = 10;
+    const [totalPages, setTotalPages] = useState(1);
+    const itemsPerPage = 5;
+
+    const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2MwMDkxOTliNjhkMTBiMzM0ZjRiOGQiLCJlbWFpbCI6Im11aGFtbWFkc2hvYWliMjgwM0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJhdXRoVG9rZW4iOnRydWUsImlhdCI6MTc0MjAyMjk3NiwiZXhwIjoxODI4NDIyOTc2fQ._GLK7VsH42PzRJQZiS9vMPCJmf7Yr-SRXUhV-szwFgw"; // Replace with actual token
 
     useEffect(() => {
-        // Fetch users from API (replace with actual API call)
-        const fetchUsers = async () => {
-            const response = await fetch('/api/users');
-            const data = await response.json();
-            setUsers(data);
-        };
         fetchUsers();
-    }, []);
+    }, [currentPage]);
 
+    const fetchUsers = async () => {
+        try {
+            const response = await fetch(`http://localhost:5001/api/admin/user/all?page=${currentPage}&limit=${itemsPerPage}&filter=all`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${authToken}`
+                }
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setUsers(data.result?.users?.docs || []);
+                setTotalPages(data.result?.users?.totalPages || 1);
+            } else {
+                console.error("Failed to fetch users:", data.message);
+                setUsers([]);
+            }
+        } catch (error) {
+            console.error("Error fetching users:", error);
+            setUsers([]);
+        }
+    };
+
+    const handleStatusChange = async (userId, currentStatus) => {
+        const newStatus = currentStatus === "active" ? "inactive" : "active";
+
+        try {
+            const response = await fetch("http://localhost:5001/api/admin/user/update", {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${authToken}`  // Use actual auth token
+                },
+                body: JSON.stringify({ id: userId, status: newStatus })
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                // Update UI instantly
+                setUsers(users.map(user =>
+                    user._id === userId ? { ...user, status: newStatus } : user
+                ));
+
+                // Show SweetAlert2 confirmation
+                Swal.fire({
+                    title: "Success!",
+                    text: `User status updated to ${newStatus.toUpperCase()}`,
+                    icon: "success",
+                    confirmButtonColor: "#3085d6",
+                    confirmButtonText: "OK"
+                });
+            } else {
+                Swal.fire({
+                    title: "Error!",
+                    text: result.message || "Failed to update status",
+                    icon: "error",
+                    confirmButtonColor: "#d33",
+                    confirmButtonText: "Try Again"
+                });
+            }
+        } catch (error) {
+            console.error("Error updating status:", error);
+            Swal.fire({
+                title: "Error!",
+                text: "Something went wrong",
+                icon: "error",
+                confirmButtonColor: "#d33",
+                confirmButtonText: "Try Again"
+            });
+        }
+    };
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
-
-    const handleSort = (column) => {
-        const order = sortOrder === 'asc' ? 'desc' : 'asc';
-        setSortColumn(column);
-        setSortOrder(order);
-        setUsers([...users].sort((a, b) => (order === 'asc' ? a[column] > b[column] : a[column] < b[column]) ? 1 : -1));
+    const handleBlockUnblock = async (userId, currentStatus) => {
+        const newStatus = currentStatus === "blocked" ? "unblocked" : "blocked";
+        try {
+            const response = await axios.put("http://localhost:5001/api/admin/user/update", {
+                id: userId,
+                profileStatus: newStatus,
+            }, {
+                headers: { "Authorization": `Bearer ${authToken}` } // Include token if required
+            });
+    
+            if (response.status === 200) {
+                Swal.fire({
+                    title: "Success!",
+                    text: `User status updated to ${newStatus.toUpperCase()}`,
+                    icon: "success",
+                    confirmButtonColor: "#3085d6",
+                    confirmButtonText: "OK"
+                });
+                setUsers(users.map(user =>
+                    user._id === userId ? { ...user, profileStatus: newStatus } : user
+                ));
+            } else {
+                console.error("API Error:", response);
+                Swal.fire("Error!", "Failed to update status", "error");
+            }
+        } catch (error) {
+            console.error("Error updating user status:", error);
+            Swal.fire("Error!", "Something went wrong", "error");
+        }
     };
-
-    const downloadCSV = () => {
-        const csvContent = [
-            ['Sno.', 'Userid', 'Name', 'Login Password', 'Transaction Password', 'Sponsor ID', 'Sponsor Name', 'Mobile No.', 'Reg. Date', 'Act. Date', 'Act. Time', 'Package', 'Status', 'Edit', 'Login'],
-            ...users.map((user, index) => [
-                index + 1, user.userid, user.name, user.loginPassword, user.transactionPassword, user.sponsorId, user.sponsorName, user.mobileNo, user.regDate, user.actDate, user.actTime, user.package, user.status
-            ])
-        ]
-        .map(row => row.join(','))
-        .join('\n');
-
-        const blob = new Blob([csvContent], { type: 'text/csv' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = 'users.csv';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
-
-    const filteredUsers = users.filter(user =>
-        user.userid.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        user.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-
-    const indexOfLastUser = currentPage * usersPerPage;
-    const indexOfFirstUser = indexOfLastUser - usersPerPage;
-    const currentUsers = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);
-
-    return (
+     return (
         <div className="dashboard">
             <Sidebar isOpen={isSidebarOpen} />
             <div className="dashboard-content">
                 <Navbar toggleSidebar={toggleSidebar} />
-                <div className="total-table-container">
-                    <h3>Total Users</h3>
+
+                <div className="inactive-table-container">
+                    <h3>Inactive Users</h3>
                     <input
                         type="text"
-                        placeholder="Search by user ID or email"
+                        placeholder="Search by user ID or name"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         className="search-input"
                     />
-                    <button onClick={downloadCSV} className="download-btn">Download CSV</button>
+
                     <div className="table-responsive">
                         <table className="user-table">
                             <thead>
                                 <tr>
-                                    <th onClick={() => handleSort('sno')}>Sno.</th>
-                                    <th onClick={() => handleSort('userid')}>Userid</th>
-                                    <th onClick={() => handleSort('name')}>Name</th>
-                                    <th onClick={() => handleSort('loginPassword')}>Login Password</th>
-                                    <th onClick={() => handleSort('transactionPassword')}>Transaction Password</th>
-                                    <th onClick={() => handleSort('sponsorId')}>Sponsor ID</th>
-                                    <th onClick={() => handleSort('sponsorName')}>Sponsor Name</th>
-                                    <th onClick={() => handleSort('mobileNo')}>Mobile No.</th>
-                                    <th onClick={() => handleSort('regDate')}>Reg. Date</th>
-                                    <th onClick={() => handleSort('actDate')}>Act. Date</th>
-                                    <th onClick={() => handleSort('actTime')}>Act. Time</th>
-                                    <th onClick={() => handleSort('package')}>Package</th>
-                                    <th onClick={() => handleSort('status')}>Status</th>
-                                    <th>Edit</th>
-                                    <th>Login</th>
+                                    <th>Sno.</th>
+                                    <th>Email</th>
+                                    <th>Name</th>
+                                    <th>Phone No.</th>
+                                    <th>Referral ID</th>
+                                    <th>Role</th>
+                                    <th>Reg. Date</th>
+                                    <th>Status</th>
+                                    <th>Manage User</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {currentUsers.map((user, index) => (
-                                    <tr key={user.userid}>
-                                        <td>{indexOfFirstUser + index + 1}</td>
-                                        <td>{user.userid}</td>
-                                        <td>{user.name}</td>
-                                        <td>{user.loginPassword}</td>
-                                        <td>{user.transactionPassword}</td>
-                                        <td>{user.sponsorId}</td>
-                                        <td>{user.sponsorName}</td>
-                                        <td>{user.mobileNo}</td>
-                                        <td>{user.regDate}</td>
-                                        <td>{user.actDate}</td>
-                                        <td>{user.actTime}</td>
-                                        <td>{user.package}</td>
-                                        <td>{user.status}</td>
-                                        <td><button>Edit</button></td>
-                                        <td><button>Login</button></td>
+                                {users.length > 0 ? (
+                                    users.map((user, index) => (
+                                        <tr key={user._id}>
+                                            <td>{index + 1 + (currentPage - 1) * itemsPerPage}</td>
+                                            <td>{user.email}</td>
+                                            <td>{user.name}</td>
+                                            <td>{user.phoneNumber}</td>
+                                            <td>{user.referralId}</td>
+                                            <td>{user.role}</td>
+                                            <td>{new Date(user.createdAt).toLocaleDateString()}</td>
+                                            <td>
+                                                <Button
+                                                    variant="contained"
+                                                    color={user.status === "active" ? "success" : "error"}
+                                                    onClick={() => handleStatusChange(user._id, user.status)}
+                                                >
+                                                    {user.status.toUpperCase()}
+                                                </Button>
+                                            </td>
+                                            <td>
+                                                <Button
+                                                    variant="contained"
+                                                    color={user.profileStatus === "unblocked" ? "success" : "error"}
+                                                    onClick={() => handleBlockUnblock(user._id, user.profileStatus)}
+                                                >
+                                                    {user.profileStatus === "unblocked" ? "Block" : "Unblock"}
+                                                </Button>
+                                            </td>
+                                        </tr>
+                                    ))
+                                ) : (
+                                    <tr>
+                                        <td colSpan="8" className="no-data">No users found</td>
                                     </tr>
-                                ))}
+                                )}
                             </tbody>
                         </table>
                     </div>
+
                     <div className="pagination">
-                        <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>Prev</button>
-                        <span>Page {currentPage} of {Math.ceil(filteredUsers.length / usersPerPage)}</span>
-                        <button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === Math.ceil(filteredUsers.length / usersPerPage)}>Next</button>
+                        <button onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} disabled={currentPage === 1}>
+                            Previous
+                        </button>
+                        <span>Page {currentPage} of {totalPages}</span>
+                        <button onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} disabled={currentPage === totalPages}>
+                            Next
+                        </button>
                     </div>
                 </div>
             </div>
