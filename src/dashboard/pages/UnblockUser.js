@@ -32,7 +32,7 @@ function UnblockUser() {
   
       const fetchUsers = async () => {
           try {
-              const response = await fetch(`http://localhost:5001/api/admin/user/all?page=${currentPage}&limit=${itemsPerPage}&filter=unblocked`, {
+              const response = await fetch(`https://goldfish-app-nczbc.ondigitalocean.app/api/admin/user/all?page=${currentPage}&limit=${itemsPerPage}&filter=unblocked`, {
                   method: "GET",
                   headers: {
                       "Content-Type": "application/json",

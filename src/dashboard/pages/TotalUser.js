@@ -32,7 +32,7 @@ function TotalUser() {
 
     const fetchUsers = async () => {
         try {
-            const response = await fetch(`http://localhost:5001/api/admin/user/all?page=${currentPage}&limit=${itemsPerPage}&filter=all`, {
+            const response = await fetch(`https://goldfish-app-nczbc.ondigitalocean.app/api/admin/user/all?page=${currentPage}&limit=${itemsPerPage}&filter=all`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -59,7 +59,7 @@ function TotalUser() {
         const newStatus = currentStatus === "active" ? "inactive" : "active";
 
         try {
-            const response = await fetch("http://localhost:5001/api/admin/user/update", {
+            const response = await fetch("https://goldfish-app-nczbc.ondigitalocean.app/api/admin/user/update", {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -110,7 +110,7 @@ function TotalUser() {
     const handleBlockUnblock = async (userId, currentStatus) => {
         const newStatus = currentStatus === "blocked" ? "unblocked" : "blocked";
         try {
-            const response = await axios.put("http://localhost:5001/api/admin/user/update", {
+            const response = await axios.put("https://goldfish-app-nczbc.ondigitalocean.app/api/admin/user/update", {
                 id: userId,
                 profileStatus: newStatus,
             }, {

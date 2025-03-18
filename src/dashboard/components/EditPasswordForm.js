@@ -38,7 +38,7 @@ function EditPasswordForm() {
     try {
       const token = localStorage.getItem("token"); // Retrieve token from local storage
       const response = await axios.post(
-        'http://localhost:5001/api/admin/change-password',
+        'https://goldfish-app-nczbc.ondigitalocean.app/api/admin/change-password',
         {
           email,
           password,
