@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
 import '../css/InactiveUser.css';
-
+import { useNavigate } from 'react-router-dom';
 function InactiveUser() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
@@ -14,6 +14,17 @@ function InactiveUser() {
     const itemsPerPage = 5;
 
     const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2MwMDkxOTliNjhkMTBiMzM0ZjRiOGQiLCJlbWFpbCI6Im11aGFtbWFkc2hvYWliMjgwM0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJhdXRoVG9rZW4iOnRydWUsImlhdCI6MTc0MjAyMjk3NiwiZXhwIjoxODI4NDIyOTc2fQ._GLK7VsH42PzRJQZiS9vMPCJmf7Yr-SRXUhV-szwFgw";
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const navigate = useNavigate();
+  
+    useEffect(() => {
+      const authToken = localStorage.getItem("token"); // Retrieve token
+      if (!authToken) {
+        navigate("/"); // Redirect to login if no token
+      } else {
+        setIsAuthenticated(true); // Set authenticated state to true
+      }
+    }, [navigate]); // Runs on component mount
 
     useEffect(() => {
         fetchUsers();

@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { FaTachometerAlt,  FaSignOutAlt, FaChevronRight, FaChevronDown, FaChartLine } from 'react-icons/fa'; // Import icons
 import './Sidebar.css'; // Import CSS for styling
 import Logo from '../../img/logo (1).png';
+import Swal from "sweetalert2";
 
 const Sidebar = ({ isOpen }) => {
   const navigate = useNavigate(); // Hook for navigation
@@ -14,10 +15,23 @@ const Sidebar = ({ isOpen }) => {
   const [isAdministrationMenuOpen, setIsAdministrationMenuOpen] = useState(false); // Toggle state for Administration submenu
   const [isHelpAndSupportOpen, setIsHelpAndSupportOpen] = useState(false); // Toggle state for HelpAndSupport submenu
   const handleLogout = () => {
-    localStorage.removeItem('auth'); // Remove the token from localStorage
-    navigate('/Login'); // Redirect to login page
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You will be logged out!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Logout!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem('token'); // Remove the token from localStorage
+        Swal.fire('Logged Out!', 'You have been successfully logged out.', 'success').then(() => {
+          navigate('/'); // Redirect to login page
+        });
+      }
+    });
   };
-
   return (
     <div className={`sidebar ${isOpen ? 'open' : ''}`}>
       <div className="sidebar-header">

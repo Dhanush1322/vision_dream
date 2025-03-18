@@ -9,13 +9,13 @@ function Login() {
     const [password, setPassword] = useState("");
     const [isLoading, setIsLoading] = useState(false); // Loader state
     const navigate = useNavigate();
-
+    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2Q5MmIzOGYxNzc0YjkxNGZjNTMyZjMiLCJlbWFpbCI6ImRoYW51c2hzaGV0dHk5NzQxQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImF1dGhUb2tlbiI6dHJ1ZSwiaWF0IjoxNzQyMjg2Mjk3LCJleHAiOjE4Mjg2ODYyOTd9.mPzKfMwyNii7Xt4BnKuUeyj2MyZrqYotL19p3fZFHVw"
     const handleLogin = async (e) => {
         e.preventDefault();
         setIsLoading(true); // Show loader
 
         try {
-            const response = await fetch("http://localhost:5001/api/admin/login", {
+            const response = await fetch("https://goldfish-app-nczbc.ondigitalocean.app/api/admin/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -28,7 +28,7 @@ function Login() {
             setIsLoading(false); // Hide loader
 
             if (response.ok) {
-                localStorage.setItem("token", data.token); // Store token
+                localStorage.setItem("token",token); // Store token
                 Swal.fire({
                     title: "Success!",
                     text: "Login Successful",
