@@ -1,0 +1,12 @@
+.dashboard-main-content {
+  margin-top: 70px;
+  margin-left: 250px;  /* desktop default */
+  transition: margin-left 0.3s ease;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .dashboard-main-content {
+    margin-left: 0px;
+  }
+}
